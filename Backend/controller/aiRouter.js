@@ -25,6 +25,7 @@ aiRouter.get('/search', async(req,res)=>{
         console.log(error)
         res.status(500).send({msg:"Something went wrong"});
     }
+      
 });
 module.exports=aiRouter;
 

@@ -21,39 +21,40 @@ fitnessRouter.get('/fitness', async (req, res) => {
 
 fitnessRouter.post('/addfitness', async (req, res) => {
     try {
-      const {
-        userId,
-        workoutType,
-        duration,
-        exercises,
-        videoUrl,
-        imageUrl,
-        notes
-      } = req.body;
+      const {userId,workoutType,duration,exercises,videoUrl,imageUrl,notes} = req.body;
   
-      const newFitnessPost = new fitness({
-        userId,
-        workoutType,
-        duration,
-        exercises,
-        videoUrl,
-        imageUrl,
-        notes
-      });
+      const newFitnessPost = new fitness({userId,workoutType,duration,exercises,videoUrl,imageUrl,notes});
   
       await newFitnessPost.save();
   
-      res.status(201).json({
-        message: 'Fitness post added successfully!',
-        fitness: newFitnessPost
+      res.status(201).json({message: 'Fitness post added successfully!',fitness: newFitnessPost});
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({message: 'Error adding fitness post',error});
+    }
+  });
+
+  fitnessRouter.put('/updatefitness/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updateData = req.body;
+  
+      const updatedFitness = await fitness.findByIdAndUpdate(id, updateData, {
+        new: true,
+        runValidators: true,
+      });
+  
+      if (!updatedFitness) {
+        return res.status(404).json({ message: 'Fitness entry not found' });
+      }
+  
+      res.status(200).json({message: 'Fitness entry updated successfully',fitness: updatedFitness,
       });
     } catch (error) {
       console.error(error);
-      res.status(500).json({
-        message: 'Error adding fitness post',
-        error
-      });
+      res.status(500).json({message: 'Error updating fitness entry',error,});
     }
   });
+  
   
 module.exports = fitnessRouter;

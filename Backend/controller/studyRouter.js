@@ -32,4 +32,26 @@ studyRouter.post('/addstudy', async (req, res) => {
     }
   });
 
+  studyRouter.put('/updatestudy/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updateData = req.body;
+  
+      const updatedStudy = await study.findByIdAndUpdate(id, updateData, {
+        new: true,
+        runValidators: true,
+      });
+  
+      if (!updatedStudy) {
+        return res.status(404).json({ message: 'Study post not found' });
+      }
+  
+      res.status(200).json({message: 'Study post updated successfully',study: updatedStudy,
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({message: 'Error updating study post',error,});
+    }
+  });
+  
 module.exports = studyRouter;

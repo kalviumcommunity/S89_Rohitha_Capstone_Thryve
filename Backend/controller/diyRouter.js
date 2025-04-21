@@ -27,5 +27,27 @@ diyRouter.post('/adddiy', async (req, res) => {
       res.status(500).json({message: 'Error adding DIY post',error});
     }
   });
+
+  diyRouter.put('/updatediy/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updateData = req.body;
+  
+      const updatedDIY = await diy.findByIdAndUpdate(id, updateData, {
+        new: true,
+        runValidators: true,
+      });
+  
+      if (!updatedDIY) {
+        return res.status(404).json({ message: 'DIY project not found' });
+      }
+  
+      res.status(200).json({ message: 'DIY project updated successfully', diy: updatedDIY });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Error updating DIY project', error });
+    }
+  });
+  
   
 module.exports = diyRouter;

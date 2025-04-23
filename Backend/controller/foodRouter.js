@@ -58,6 +58,42 @@ foodRouter.put('/updatefood/:id', async (req, res) => {
         res.status(500).json({message: 'Error updating food recipe',error,});
         }
       });
-      
 
+ foodRouter.delete('/deletefood/:id', async (req, res) => {
+        try {
+          const { id } = req.params;
+      
+          const deletedFood = await food.findByIdAndDelete(id);
+      
+          if (!deletedFood) {
+            return res.status(404).json({ message: 'Food recipe not found' });
+          }
+      
+          res.status(200).json({ message: 'Food recipe deleted successfully', food: deletedFood });
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ message: 'Error deleting food recipe', error });
+        }
+      });
+
+    foodRouter.patch('/patchfood/:id', async (req, res) => {
+        try {
+          const { id } = req.params;
+          const updateFields = req.body;
+      
+          const updatedFood = await food.findByIdAndUpdate(id, updateFields, {
+            new: true,
+            runValidators: true,
+          });
+      
+          if (!updatedFood) {
+            return res.status(404).json({ message: 'Food recipe not found' });
+          }
+      
+          res.status(200).json({ message: 'Food recipe partially updated', food: updatedFood });
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ message: 'Error updating food recipe', error });
+        }
+      });
 module.exports=foodRouter;

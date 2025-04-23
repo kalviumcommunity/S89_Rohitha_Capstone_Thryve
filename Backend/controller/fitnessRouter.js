@@ -37,9 +37,9 @@ fitnessRouter.post('/addfitness', async (req, res) => {
   fitnessRouter.put('/updatefitness/:id', async (req, res) => {
     try {
       const { id } = req.params;
-      const updateData = req.body;
+      const {userId,workoutType,duration,exercises,videoUrl,imageUrl,notes} = req.body;
   
-      const updatedFitness = await fitness.findByIdAndUpdate(id, updateData, {
+      const updatedFitness = await fitness.findByIdAndUpdate({_id:id}, {userId,workoutType,duration,exercises,videoUrl,imageUrl,notes}, {
         new: true,
         runValidators: true,
       });

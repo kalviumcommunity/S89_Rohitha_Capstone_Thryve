@@ -21,9 +21,9 @@ fitnessRouter.get('/fitness', async (req, res) => {
 
 fitnessRouter.post('/addfitness', async (req, res) => {
     try {
-      const {userId,workoutType,duration,exercises,videoUrl,imageUrl,notes} = req.body;
+      const {userName,workoutType,duration,exercises,videoUrl,imageUrl,notes} = req.body;
   
-      const newFitnessPost = new fitness({userId,workoutType,duration,exercises,videoUrl,imageUrl,notes});
+      const newFitnessPost = new fitness({userName,workoutType,duration,exercises,videoUrl,imageUrl,notes});
   
       await newFitnessPost.save();
   
@@ -37,9 +37,9 @@ fitnessRouter.post('/addfitness', async (req, res) => {
   fitnessRouter.put('/updatefitness/:id', async (req, res) => {
     try {
       const { id } = req.params;
-      const {userId,workoutType,duration,exercises,videoUrl,imageUrl,notes} = req.body;
+      const {userName,workoutType,duration,exercises,videoUrl,imageUrl,notes} = req.body;
   
-      const updatedFitness = await fitness.findByIdAndUpdate({_id:id}, {userId,workoutType,duration,exercises,videoUrl,imageUrl,notes}, {
+      const updatedFitness = await fitness.findByIdAndUpdate({_id:id}, {userName,workoutType,duration,exercises,videoUrl,imageUrl,notes}, {
         new: true,
         runValidators: true,
       });
@@ -55,6 +55,46 @@ fitnessRouter.post('/addfitness', async (req, res) => {
       res.status(500).json({message: 'Error updating fitness entry',error,});
     }
   });
+
+  fitnessRouter.delete('/deletefitness/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+  
+      const deletedFitness = await fitness.findByIdAndDelete(id);
+  
+      if (!deletedFitness) {
+        return res.status(404).json({ message: 'Fitness entry not found' });
+      }
+  
+      res.status(200).json({ message: 'Fitness entry deleted successfully', fitness: deletedFitness });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Error deleting fitness entry', error });
+    }
+  });
+
+  fitnessRouter.patch('/patchfitness/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updateFields = req.body;
+  
+      const updatedFitness = await fitness.findByIdAndUpdate(id, updateFields, {
+        new: true,
+        runValidators: true,
+      });
+  
+      if (!updatedFitness) {
+        return res.status(404).json({ message: 'Fitness entry not found' });
+      }
+  
+      res.status(200).json({ message: 'Fitness entry partially updated', fitness: updatedFitness });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Error updating fitness entry', error });
+    }
+  });
+  
+  
   
   
 module.exports = fitnessRouter;

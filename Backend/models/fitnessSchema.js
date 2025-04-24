@@ -21,7 +21,7 @@ const fitnessSchema = new mongoose.Schema({
     default: Date.now,
   },
   exercises:{
-    type:String,
+    type:[String],
     required:true,
   },
   notes: {

@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const studySchema = new mongoose.Schema({
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
+  userName: {
+    type: String,
     ref: 'User',
     required: false, 
   },
@@ -28,14 +28,7 @@ const studySchema = new mongoose.Schema({
     type: [String], 
     default: [],
   },
-  videoUrl: {
-    type: String,
-    default: '',
-  },
-  uploadedVideo: {
-    type: String,
-    default: '',
-  },
+  
   uploadedFiles: {
     type: [String], 
     default: [],

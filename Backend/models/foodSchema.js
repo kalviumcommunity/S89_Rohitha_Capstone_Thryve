@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const foodSchema = new mongoose.Schema({
-    userId: {
-        type: mongoose.Schema.Types.ObjectId,
+    userName: {
+        type: String,
         ref: 'User',
         required: false,
       },
@@ -18,14 +18,6 @@ const foodSchema = new mongoose.Schema({
       instructions: {
         type: String,
         required: true,
-      },
-      imageUrl: {
-        type: String,
-        default: '',
-      },
-      videoUrl: {
-        type: String,
-        default: '',
       },
       
       category: {

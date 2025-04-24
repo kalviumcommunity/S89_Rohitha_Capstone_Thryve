@@ -16,27 +16,14 @@ const fitnessSchema = new mongoose.Schema({
     required: true,
   
   },
-  imageUrl: {
-    type: String,
-    default: '',
-  },
-  videoUrl: {
-    type: String,
-    default: '',
-  },
   date: {
     type: Date,
     default: Date.now,
   },
-  exercises: [
-    {
-      name: String,
-      sets: Number,
-      reps: Number,
-      weight: Number, 
-      notes: String,
-    }
-  ],
+  exercises:{
+    type:String,
+    required:true,
+  },
   notes: {
     type: String,
     default: '',

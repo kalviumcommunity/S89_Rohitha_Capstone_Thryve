@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const diySchema = new mongoose.Schema({
-    userId: {
-        type: mongoose.Schema.Types.ObjectId,
+    userName: {
+        type: String,
         ref: 'User',
         required: false, 
       },
@@ -36,15 +36,6 @@ const diySchema = new mongoose.Schema({
   estimatedTime: {
     type: String, 
     required: true,
-  },
-  imageUrl: {
-    type: String,
-    default: '',
-  },
-  videoUrl: {
-    type: String,
-    default: '',
-  
   },
   tags: {
     type: [String],

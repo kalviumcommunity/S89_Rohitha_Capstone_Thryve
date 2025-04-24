@@ -66,7 +66,7 @@ studyRouter.post('/addstudy', async (req, res) => {
   
       res.status(200).json({ message: 'Study post deleted successfully', study: deletedStudy });
     } catch (error) {
-      console.error('Error deleting study post:', error.message);
+      console.error('Error deleting study posts:', error.message);
       res.status(500).json({ message: 'Error deleting study post', error });
     }
   });

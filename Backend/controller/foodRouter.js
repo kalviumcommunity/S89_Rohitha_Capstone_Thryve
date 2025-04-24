@@ -71,7 +71,7 @@ foodRouter.put('/updatefood/:id', async (req, res) => {
       
           res.status(200).json({ message: 'Food recipe deleted successfully', food: deletedFood });
         } catch (error) {
-          console.error('Error deleting study post:', error.message);
+          console.error('Error deleting food post:', error.message);
           res.status(500).json({ message: 'Error deleting food recipe', error });
         }
       });

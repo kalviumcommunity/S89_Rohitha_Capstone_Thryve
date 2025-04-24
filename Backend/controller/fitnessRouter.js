@@ -68,7 +68,7 @@ fitnessRouter.post('/addfitness', async (req, res) => {
   
       res.status(200).json({ message: 'Fitness entry deleted successfully', fitness: deletedFitness });
     } catch (error) {
-      console.error('Error deleting fitness posts:', error.message);
+      console.error('Error deleting fitness post:', error.message);
       res.status(500).json({ message: 'Error deleting fitness entry', error });
     }
   });

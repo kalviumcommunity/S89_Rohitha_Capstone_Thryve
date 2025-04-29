@@ -20,6 +20,10 @@ app.use("/food", foodRouter);
 app.use("/study", studyRouter);
 app.use("/ai", aiRouter);
 
+app.get('/',(res,req)=>{
+    res.send("Backend server is running")
+})
+
 
 app.listen(8080, async () => {
     try {

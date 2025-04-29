@@ -6,6 +6,9 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 app.use(express.json());
+app.get('/',(req,res)=>{
+    res.json("Backend server is running")
+})
 
 const diyRouter = require("./controller/diyRouter");
 const fitnessRouter = require("./controller/fitnessRouter");
@@ -20,9 +23,7 @@ app.use("/food", foodRouter);
 app.use("/study", studyRouter);
 app.use("/ai", aiRouter);
 
-app.get('/',(res,req)=>{
-    res.send("Backend server is running")
-})
+
 
 
 app.listen(8080, async () => {

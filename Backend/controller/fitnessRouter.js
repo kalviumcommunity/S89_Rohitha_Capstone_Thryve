@@ -21,9 +21,9 @@ fitnessRouter.get('/fitness', async (req, res) => {
 
 fitnessRouter.post('/addfitness', async (req, res) => {
     try {
-      const {userName,workoutType,duration,exercises,videoUrl,imageUrl,notes} = req.body;
+      const {userName,workoutType,duration,exercises,notes,date} = req.body;
   
-      const newFitnessPost = new fitness({userName,workoutType,duration,exercises,videoUrl,imageUrl,notes});
+      const newFitnessPost = new fitness({userName,workoutType,duration,exercises,notes,date});
   
       await newFitnessPost.save();
   

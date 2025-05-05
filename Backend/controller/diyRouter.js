@@ -15,9 +15,9 @@ diyRouter.get('/diy-projects', async(req,res)=>{
 
 diyRouter.post('/adddiy', async (req, res) => {
     try {
-      const {title,description,materials,steps,imageUrl,videoUrl,category,estimatedTime,difficulty,tags} = req.body;
+      const {userName,title,description,materials,steps,category,estimatedTime,difficulty,tags} = req.body;
   
-      const newDIYPost = new diy({title,description,materials,steps,imageUrl,videoUrl,category,estimatedTime,difficulty,tags});
+      const newDIYPost = new diy({userName,title,description,materials,steps,category,estimatedTime,difficulty,tags});
   
       await newDIYPost.save();
   

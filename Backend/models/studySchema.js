@@ -29,10 +29,6 @@ const studySchema = new mongoose.Schema({
     default: [],
   },
   
-  uploadedFiles: {
-    type: [String], 
-    default: [],
-  },
   tags: {
     type: [String],
     default: [],

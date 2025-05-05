@@ -27,8 +27,8 @@ foodRouter.get('/food/:dish', async (req, res) => {
     });
 foodRouter.post('/addfood', async (req, res) => {
       try {
-          const {title,ingredients,instructions,imageUrl,videoUrl,category,cookTime,servings,tags} = req.body;
-          const newFoodPost = new food({title,ingredients,instructions,imageUrl,videoUrl,category,cookTime,servings,tags});
+          const {userName,title,ingredients,instructions,category,cookTime,servings,tags,createdAt} = req.body;
+          const newFoodPost = new food({userName,title,ingredients,instructions,category,cookTime,servings,tags,createdAt});
          await newFoodPost.save();
       
           res.status(201).json({message: 'Food post added successfully!',food: newFoodPost});

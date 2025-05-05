@@ -19,9 +19,9 @@ studyRouter.get('/study-resources', async (req, res) => {
 
 studyRouter.post('/addstudy', async (req, res) => {
     try {
-      const {title,subject,description,content,pdfUrl,videoUrl,imageUrl,difficulty,tags} = req.body;
+      const {userName,title,subject,description,content,difficulty,tags,createdAt} = req.body;
   
-      const newStudyPost = new study({title,subject,description,content,pdfUrl,videoUrl,imageUrl,difficulty,tags});
+      const newStudyPost = new study({userName,title,subject,description,content,difficulty,tags,createdAt});
   
       await newStudyPost.save();
   

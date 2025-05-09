@@ -4,6 +4,8 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
+const cors = require("cors");
+app.use(cors());
 
 app.use(express.json());
 app.get('/',(req,res)=>{
@@ -15,6 +17,8 @@ const fitnessRouter = require("./controller/fitnessRouter");
 const foodRouter = require("./controller/foodRouter");
 const studyRouter = require("./controller/studyRouter");
 const aiRouter = require("./controller/aiRouter");
+const userRouter = require("./controller/userRouter");
+
 
 
 app.use("/diy", diyRouter);
@@ -22,6 +26,8 @@ app.use("/fitness", fitnessRouter);
 app.use("/food", foodRouter);
 app.use("/study", studyRouter);
 app.use("/ai", aiRouter);
+app.use("/user", userRouter);
+
 
 
 

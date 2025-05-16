@@ -29,8 +29,8 @@ app.use(passport.session());
 
 // Passport Google OAuth Strategy
 passport.use(new GoogleStrategy({
-    clientID: "759708047828-2nqdvj423sq0egd1aqillo4qlkpvoptd.apps.googleusercontent.com", // Set in your .env
-    clientSecret: "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", // Set in your .env
+    clientID:process.env.clientID, // Set in your .env
+    clientSecret: process.env.clientSecret, // Set in your .env
     callbackURL: "/auth/google/callback",
   },
   async (accessToken, refreshToken, profile, done) => {

@@ -21,7 +21,7 @@ function LoginPage() {
       if (response.status === 200) {
         // Successful login
         alert("Login successful!");
-        navigate("/main"); // Change this to your actual home/dashboard path
+        navigate("/dashboard"); // Change this to your actual home/dashboard path
       }
     } catch (err) {
       console.error("Login error:", err);
@@ -84,11 +84,6 @@ function LoginPage() {
               <Link to="/forgot-password" className="forgot-link">
                 Click here
               </Link>
-              <a href="http://localhost:8080/auth/google" style={{ textDecoration: "none" }}>
-                <button type="button" className="google-button">
-                  <span className="google-icon">G</span> Sign in with Google
-                </button>
-              </a>
             </div>
           </form>
         </div>

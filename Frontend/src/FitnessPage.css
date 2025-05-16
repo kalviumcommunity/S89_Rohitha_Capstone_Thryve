@@ -1,0 +1,143 @@
+.fitness-page {
+  background-image: url('https://images.unsplash.com/photo-1534367610401-ec7d9e3249d7'); /* full background */
+  background-size: cover;
+  background-position: center;
+  color: black;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding-left: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.nav-links .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f3;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  margin-right: 5px;
+  outline: none;
+}
+
+.heading {
+  padding: 40px 30px 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.section {
+  padding: 20px 30px;
+}
+
+.section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 280px;
+  height: 170px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card span {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* Specific card backgrounds */
+.weights {
+  background-image: url('https://i.pinimg.com/736x/a8/af/4a/a8af4ac4e7fe68b9bc83cc213b7bceaa.jpg');
+}
+
+.running {
+  background-image: url('https://i.pinimg.com/736x/54/06/d6/5406d6bac759851425da523ad02b7148.jpg');
+}
+
+.planks {
+  background-image: url('https://i.pinimg.com/736x/34/37/35/34373547ec84fceb6c85d9c3cc1ea81e.jpg');
+}
+
+.meditation {
+  background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRsnJ2XNfygS-ZZ2xJls3ADKu5c2R7wFeSytLSwYHVMEz2CGrod');
+}
+
+.breathing {
+  background-image: url('https://i.pinimg.com/736x/3b/80/ea/3b80ea1630878b2cc9183535c0a02ba5.jpg');
+}
+
+.yoga {
+  background-image: url('https://i.pinimg.com/736x/09/60/bc/0960bc04fb727aa9acd969cc42388dc7.jpg');
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.footer .about {
+  max-width: 400px;
+  font-size: 14px;
+}
+
+.footer .contact {
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  margin-top: 10px;
+}

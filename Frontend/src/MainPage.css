@@ -1,0 +1,200 @@
+.main-page {
+  height: 100%;
+  background-image: url('https://i.pinimg.com/736x/f9/f4/a4/f9f4a4631393f2e63d23c0a968ad65f0.jpg'); /* Replace with your actual background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.main-page .background-overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+/* Navbar */
+.main-page .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.main-page .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.main-page nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.main-page nav li {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.main-page .icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.main-page .search-box {
+  padding: 6px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Quote */
+.main-page .quote {
+    margin: auto; /* auto left margin pushes it to the right */
+  text-align: center;
+  font-size: 16px;
+  background: white;
+  width: max-content;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+.main-page .quote-section{
+    padding-top: 2.5rem;
+}
+
+/* Welcome Section */
+.main-page .welcome-section {
+  padding: 40px 60px 20px 60px;
+}
+
+.main-page .welcome-section h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.main-page .suggestion-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.main-page .cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.main-page .card {
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  align-items: flex-end;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.main-page .card1 {
+  background-image: url('https://i.pinimg.com/736x/29/3e/de/293edeb6b21cba131de831ba5663816c.jpg');
+}
+
+.main-page .card2 {
+  background-image: url('https://i.pinimg.com/736x/09/60/bc/0960bc04fb727aa9acd969cc42388dc7.jpg');
+}
+
+.main-page .card3 {
+  background-image: url('https://i.pinimg.com/736x/18/db/24/18db24d4b9ef75cb77a78fc8ebf759fc.jpg');
+}
+
+/* Footer */
+  footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 32px 60px;
+    margin-top: 32px;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .footer-left,
+  .footer-right {
+    width: 100%;
+    max-width: 50%;
+  }
+  
+  .footer-left h3,
+  .footer-right h3 {
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .footer-icons {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  
+  .footer-icons i {
+    width: 20px;
+    height: 20px;
+    color: black;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .footer-icons i:hover {
+    transform: scale(1.1);
+    color: #0077b6;
+  }
+
+.main-page .socials span {
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Style the navbar list */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style each navigation link */
+.navbar ul li a {
+  text-decoration: none;
+  color: #333333; /* Softer black */
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/* Optional hover effect */
+.navbar ul li a:hover {
+  color: #555555; /* Even lighter gray on hover */
+  text-decoration: underline;
+}

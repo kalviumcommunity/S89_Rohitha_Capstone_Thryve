@@ -1,0 +1,136 @@
+.diy-page {
+  background-image: url('https://images.unsplash.com/photo-1602524818561-4272c8e6c1b5'); /* Replace with actual background */
+  background-size: cover;
+  background-position: center;
+  color: black;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding-left: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.nav-links .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f3;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  margin-right: 5px;
+  outline: none;
+}
+
+/* Headings */
+.heading {
+  padding: 40px 30px 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.section {
+  padding: 20px 30px;
+}
+
+.section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Cards */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 280px;
+  height: 170px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card span {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* Specific card backgrounds */
+.pottery {
+  background-image: url('https://i.pinimg.com/736x/18/db/24/18db24d4b9ef75cb77a78fc8ebf759fc.jpg');
+}
+
+.table {
+  background-image: url('https://i.pinimg.com/736x/4b/d1/5f/4bd15f2729a5c101de796510d5e4e3e6.jpg');
+}
+
+.baskets {
+  background-image: url('https://i.pinimg.com/736x/a3/80/77/a380776d263081f618940ba3eac741a1.jpg');
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.footer .about {
+  max-width: 400px;
+  font-size: 14px;
+}
+
+.footer .contact {
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  margin-top: 10px;
+}

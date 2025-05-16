@@ -1,0 +1,138 @@
+.study-page {
+  background-image: url('https://i.pinimg.com/736x/4f/ef/68/4fef68227fd9a48eb453d3d0cd27a3fc.jpg');
+  background-size: cover;
+  background-position: center;
+  color: black;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding-left: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.nav-links .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f3;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  margin-right: 5px;
+  outline: none;
+}
+
+.content {
+  padding: 30px;
+}
+
+.main-heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.section-heading {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  color: black;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 260px;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.card span {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* Backgrounds for specific cards */
+.design {
+  background-image: url('https://i.pinimg.com/236x/21/b9/84/21b984290a894f408ea2aa6e99d26058.jpg');
+}
+
+.accounts {
+  background-image: url('https://i.pinimg.com/736x/01/d1/41/01d1414329f01d5542980717b1103c16.jpg');
+}
+
+.coding {
+  background-image: url('https://i.pinimg.com/736x/7c/1d/26/7c1d2603d3dda3054fea17e47ff44a89.jpg');
+}
+
+.connect {
+  background-image: url('https://i.pinimg.com/736x/a7/7e/9a/a77e9a287a0ec86bda9a0dc21d1c729c.jpg');
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.footer .about {
+  max-width: 400px;
+  font-size: 14px;
+}
+
+.footer .contact {
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  margin-top: 10px;
+}

@@ -1,0 +1,144 @@
+.recipe-page {
+  background-image: url(''); /* background */
+  background-size: cover;
+  background-position: center;
+  color: black;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+
+}
+
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding-left: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.nav-links .active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f3f3f3;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  margin-right: 5px;
+  outline: none;
+}
+
+.heading {
+  padding: 40px 30px 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.section {
+  padding: 20px 30px;
+}
+
+.section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 280px;
+  height: 170px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card span {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black;
+}
+
+/* Card-specific background images */
+.brownies {
+  background-image: url('https://i.pinimg.com/736x/e4/38/70/e43870e4dac00cc716c55c96ff5a6593.jpg');
+}
+
+.pasta {
+  background-image: url('https://i.pinimg.com/736x/22/8b/7d/228b7d0cddfc7281a9f238f73456fcf1.jpg');
+}
+
+.soup {
+  background-image: url('https://i.pinimg.com/736x/29/3e/de/293edeb6b21cba131de831ba5663816c.jpg');
+}
+
+.sandwich {
+  background-image: url('https://i.pinimg.com/736x/28/5f/e4/285fe42b209ea0dd35665fcc0f453f23.jpg');
+}
+
+.tacos {
+  background-image: url('https://i.pinimg.com/736x/db/c4/c0/dbc4c003d5674030efe2173d2b8dcbce.jpg');
+}
+
+.rolls {
+  background-image: url('https://i.pinimg.com/736x/6a/38/99/6a3899ae46c71571f7f8bffaf368e926.jpg');
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.footer .about {
+  max-width: 400px;
+  font-size: 14px;
+}
+
+.footer .contact {
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  margin-top: 10px;
+}

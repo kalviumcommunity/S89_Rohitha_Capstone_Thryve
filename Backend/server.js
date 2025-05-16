@@ -31,7 +31,7 @@ app.use(passport.session());
 passport.use(new GoogleStrategy({
     clientID:process.env.clientID, // Set in your .env
     clientSecret: process.env.clientSecret, // Set in your .env
-    callbackURL: "/auth/google/callback",
+    callbackURL: process.env.callbackURL, // Set in your .env
   },
   async (accessToken, refreshToken, profile, done) => {
     try {

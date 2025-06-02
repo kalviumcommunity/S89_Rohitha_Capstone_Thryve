@@ -108,10 +108,13 @@
   background-image: url('https://i.pinimg.com/736x/7c/1d/26/7c1d2603d3dda3054fea17e47ff44a89.jpg');
 }
 
-.connect {
-  background-image: url('https://i.pinimg.com/736x/a7/7e/9a/a77e9a287a0ec86bda9a0dc21d1c729c.jpg');
+.editing {
+  background-image: url('https://i.pinimg.com/736x/06/00/31/060031346b68afbb1ff198c745961692.jpg');
 }
 
+.templates {
+  background-image: url('https://i.pinimg.com/736x/71/b7/77/71b7775c2ad707f7afc22757791de192.jpg');
+}
 .footer {
   display: flex;
   justify-content: space-between;

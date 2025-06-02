@@ -248,3 +248,24 @@
   flex: 1;
 }
 
+.floating-add-btn {
+  position: fixed;
+  bottom: 100px; /* Adjust so it's above the footer */
+  right: 40px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  color: #2d8cff;
+  font-size: 2.5rem;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.2s;
+}
+.floating-add-btn:hover {
+  background: #2d8cff;
+  color: #fff;
+}
+

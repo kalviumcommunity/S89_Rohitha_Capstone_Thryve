@@ -84,7 +84,25 @@
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+.recipe-page .card{
+  width: 265px;
+  height: 150px;
+  border-radius: 15px;
+  padding: 40px;
+  padding-left: 20px;
+  display: flex;
+  align-items: flex-end;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  background-size: cover;
+  background-position: center;
+  color: white;
+  
+}
+
 .card span {
+  
   position: absolute;
   bottom: 10px;
   left: 15px;
@@ -118,6 +136,22 @@
   background-image: url('https://i.pinimg.com/736x/6a/38/99/6a3899ae46c71571f7f8bffaf368e926.jpg');
 }
 
+.white {
+  background-image: url('https://i.pinimg.com/736x/61/05/5a/61055a4336293f54810eaf8548b83c32.jpg');
+}
+
+.manchuria {
+  background-image: url('https://i.pinimg.com/736x/45/c0/cf/45c0cf2587f9f1aa3dfb09b22aa92084.jpg');
+}
+
+.rice {
+  background-image: url('https://i.pinimg.com/736x/b9/ff/32/b9ff32c78f37aae474dded1be3d48d45.jpg');
+}
+
+.curry {
+  background-image: url('https://i.pinimg.com/736x/29/ac/b4/29acb49173c63030c814fe6808a75a09.jpg');
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -125,6 +159,7 @@
   padding: 30px;
   flex-wrap: wrap;
   margin-top: 40px;
+  
 }
 
 .footer .about {

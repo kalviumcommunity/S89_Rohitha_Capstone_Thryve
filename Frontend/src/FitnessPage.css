@@ -117,6 +117,22 @@
   background-image: url('https://i.pinimg.com/736x/09/60/bc/0960bc04fb727aa9acd969cc42388dc7.jpg');
 }
 
+.crunches {
+  background-image: url('https://i.pinimg.com/736x/52/cc/21/52cc21abfed61735f2adf743141088cb.jpg');
+}
+
+.exercise {
+  background-image: url('https://i.pinimg.com/736x/ad/a6/82/ada6829fa5e3cbcf6751462a8c3488d5.jpg');
+}
+
+.asanas {
+  background-image: url('https://i.pinimg.com/736x/7c/82/98/7c82989fd4e49eb202092e77696e7736.jpg');
+}
+
+.pranayamam {
+  background-image: url('https://i.pinimg.com/736x/5f/03/2a/5f032a692f6392ef15fcd22c018c9e34.jpg');
+}
+
 .footer {
   display: flex;
   justify-content: space-between;

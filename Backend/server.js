@@ -11,7 +11,6 @@ const session = require("express-session");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const User = require("./models/userSchema"); // Adjust path if needed
-
 app.use(express.json());
 app.get('/',(req,res)=>{
     res.json("Backend server is running")
@@ -68,7 +67,7 @@ app.get("/auth/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
   (req, res) => {
     // Redirect or respond as needed
-    res.redirect("http://localhost:5173"); // Change to your frontend route
+    res.redirect("http://localhost:5173/main"); // Change to your frontend route
   }
 );
 
@@ -85,7 +84,6 @@ app.use("/food", foodRouter);
 app.use("/study", studyRouter);
 app.use("/ai", aiRouter);
 app.use("/user", userRouter);
-
 app.listen(8080, async () => {
     try {
         await mongoose.connect(process.env.MONGO_URL);

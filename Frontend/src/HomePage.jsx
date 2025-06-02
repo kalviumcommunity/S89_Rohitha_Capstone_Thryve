@@ -4,7 +4,6 @@ import './HomePage.css';
 
 function HomePage() {
   useEffect(() => {
-    // Feather icons replacement
     if (window.feather) {
       window.feather.replace();
     }
@@ -17,18 +16,22 @@ function HomePage() {
         <h1>Thryve</h1>
         <p className="tagline">Broke? Busy? Thryve Anyway!</p>
         <div className="header-buttons">
-        <Link to="/login" className="nav-button">LOG IN</Link>
-        <Link to="/signup" className="nav-button">SIGN UP</Link>
+          <Link to="/login" className="nav-button">LOG IN</Link>
+          <Link to="/signup" className="nav-button">SIGN UP</Link>
         </div>
       </div>
 
       {/* Card Grid */}
       <div className="card-grid">
-        <Card className="recipies" title="Recipies" text="Want to make healthy and easy recipies in 5min??" />
-        <Card className="fitness" title="Fitness" text="Want to burn all those extra calories??" />
-        <Card className="diy" title="DIY" text="Want to make your own DIY products??" />
-        <Card className="ai" title="AI" text="Want answers to your questions instantly??" />
-        <Card className="study" title="Study" text="Want a perfect score on your exams??" />
+        <div className="top-row">
+          <Card className="recipes" title="Recipes" text="Want to make healthy and easy recipes in 5min??" />
+          <Card className="fitness" title="Fitness" text="Want to burn all those extra calories??" />
+          <Card className="diy" title="DIY" text="Want to make your own DIY products??" />
+        </div>
+        <div className="bottom-row">
+          <Card className="ai" title="AI" text="Want answers to your questions instantly??" />
+          <Card className="study" title="Study" text="Want a perfect score on your exams??" />
+        </div>
       </div>
 
       {/* Footer */}

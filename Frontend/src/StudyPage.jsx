@@ -9,7 +9,7 @@ function StudyPage() {
       <nav className="navbar">
         <div className="logo">Thryve</div>
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/main">Home</Link></li>
           <li><Link to="/recipes">Recipes</Link></li>
           <li><Link to="/fitness">Fitness</Link></li>
           <li><Link to="/diy">DIY</Link></li>

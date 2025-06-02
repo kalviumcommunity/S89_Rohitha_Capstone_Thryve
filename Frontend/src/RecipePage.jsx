@@ -9,7 +9,7 @@ function RecipePage() {
       <nav className="navbar">
         <div className="logo">Thryve</div>
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/main">Home</Link></li>
           <li className="active">Recipes</li>
           <li><Link to="/fitness">Fitness</Link></li>
           <li><Link to="/diy">DIY</Link></li>
@@ -31,9 +31,22 @@ function RecipePage() {
       <div className="section">
         <h3>5 min Recipes</h3>
         <div className="card-container">
-          <div className="card brownies"><span>Choco Fudge Brownies</span></div>
-          <div className="card pasta"><span>Red sauce penne pasta</span></div>
-          <div className="card soup"><span>Tomatoe Basil Soup</span></div>
+          <div className="card brownies" onClick={()=>{
+            window.open("https://youtu.be/lIb_741_dIw","_self")
+          }}> <span>Choco Fudge Brownies</span></div>
+          <div className="card pasta" onClick={()=>{
+            window.open("https://youtu.be/zSCTYKUeLQg","_self")
+          }}> <span>Red sauce penne pasta</span></div>
+          <div className="card soup" onClick={()=>{
+            window.open("https://youtu.be/szjZ3vqwyXE","_self")
+          }}> <span>Tomatoe Basil Soup</span></div>
+          <div className="card white" onClick={()=>{
+            window.open("https://youtu.be/Mb_rmBxJ9Cc","_self")
+          }} ><span>White sauce pasta</span></div>
+          <div className="card manchuria" onClick={()=>{
+            window.open("https://youtu.be/iuc0qT8kSJo","_self")
+          }} ><span>Manchuria</span></div>
+          
         </div>
       </div>
 
@@ -41,9 +54,21 @@ function RecipePage() {
       <div className="section">
         <h3>Healthy Recipies</h3>
         <div className="card-container">
-          <div className="card sandwich"><span>Brown bread Sandwhich</span></div>
-          <div className="card tacos"><span>Veggies stuffed Tacos</span></div>
-          <div className="card rolls"><span>Salad stuffed Rolls</span></div>
+          <div className="card sandwich" onClick={()=>{
+            window.open("https://youtu.be/BlzJzavriHw","_self")
+          }}> <span>Brown bread Sandwhich</span></div>
+          <div className="card tacos" onClick={()=>{
+            window.open("https://youtu.be/X8-Q-JHHSFw","_self")
+          }}> <span>Veggies stuffed Tacos</span></div>
+          <div className="card rolls" onClick={()=>{
+            window.open("https://youtu.be/7DuHn0kx0Ps","_self")
+          }}> <span>Salad stuffed Rolls</span></div>
+          <div className="card rice" onClick={()=>{
+            window.open("https://www.youtube.com/shorts/6NDB035TTFw?feature=share","_self")
+          }}> <span>Fried Rice</span></div>
+          <div className="card curry" onClick={()=>{
+            window.open("https://youtu.be/nhs0deABmLM","_self")
+          }}> <span>Potatoe curry</span></div>
         </div>
       </div>
 

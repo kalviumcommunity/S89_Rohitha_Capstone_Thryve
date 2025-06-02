@@ -5,10 +5,11 @@
   background-position: center;
   background-repeat: no-repeat;
   font-family: 'Segoe UI', sans-serif;
+  
 }
 
 .main-page .background-overlay {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(233, 229, 229, 0.502);
   min-height: 100vh;
   padding-bottom: 40px;
 }
@@ -70,6 +71,7 @@
 
 .main-page .quote-section{
     padding-top: 2.5rem;
+    color: rgb(12, 12, 12);
 }
 
 /* Welcome Section */
@@ -78,29 +80,34 @@
 }
 
 .main-page .welcome-section h1 {
-  font-size: 48px;
+  font-size: 55px;
   font-weight: 700;
   margin-bottom: 15px;
+  color: black;
 }
 
 .main-page .suggestion-title {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  margin-top: 50px;
+  color: rgb(12, 12, 12);
 }
 
 /* Cards */
 .main-page .cards {
   display: flex;
-  gap: 20px;
+  gap: 45px;
   flex-wrap: wrap;
+
 }
 
 .main-page .card {
-  width: 250px;
+  width: 265px;
   height: 150px;
   border-radius: 15px;
-  padding: 15px;
+  padding: 40px;
+  padding-left: 20px;
   display: flex;
   align-items: flex-end;
   font-weight: bold;
@@ -111,9 +118,36 @@
   color: white;
 }
 
+.main-page .card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  overflow: hidden;
+}
+
+.main-page .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+
+.main-page .card p {
+  position: relative;
+  z-index: 1;
+}
+
+
 .main-page .card1 {
+
   background-image: url('https://i.pinimg.com/736x/29/3e/de/293edeb6b21cba131de831ba5663816c.jpg');
 }
+
 
 .main-page .card2 {
   background-image: url('https://i.pinimg.com/736x/09/60/bc/0960bc04fb727aa9acd969cc42388dc7.jpg');
@@ -123,26 +157,31 @@
   background-image: url('https://i.pinimg.com/736x/18/db/24/18db24d4b9ef75cb77a78fc8ebf759fc.jpg');
 }
 
+.main-page .card4 {
+  background-image: url('https://i.pinimg.com/236x/21/b9/84/21b984290a894f408ea2aa6e99d26058.jpg');
+}
+
 /* Footer */
   footer {
     background-color: rgba(255, 255, 255, 0.9);
     color: black;
     padding: 32px 60px;
     margin-top: 32px;
+   
   }
   
   .footer-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 2000px;
     margin: auto;
   }
   
   .footer-left,
   .footer-right {
     width: 100%;
-    max-width: 50%;
+    max-width: 30%;
   }
   
   .footer-left h3,
@@ -198,3 +237,14 @@
   color: #555555; /* Even lighter gray on hover */
   text-decoration: underline;
 }
+
+.background-overlay {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-area {
+  flex: 1;
+}
+

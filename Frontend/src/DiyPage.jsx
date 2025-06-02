@@ -9,7 +9,7 @@ function DiyPage() {
       <nav className="navbar">
         <div className="logo">Thryve</div>
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/main">Home</Link></li>
           <li><Link to="/recipes">Recipes</Link></li>
           <li><Link to="/fitness">Fitness</Link></li>
           <li className="active">DIY</li>
@@ -30,10 +30,22 @@ function DiyPage() {
       <div className="section">
         <h3>Do it yourself</h3>
         <div className="card-container">
-          <div className="card pottery"><span>Pottery all<br />by yourself</span></div>
-          <div className="card table"><span>Make a table<br />at home</span></div>
-          <div className="card baskets"><span>Knit baskets on<br />your own</span></div>
-        </div>
+          <div className="card pottery" onClick={()=>{
+            window.open("https://youtu.be/JzE3g9KrdOQ","_self")
+          }}><span>Pottery all<br />by yourself</span></div>
+          <div className="card table" onClick={()=>{
+            window.open("https://youtu.be/inpok4MKVLM","_self")
+          }}><span>Make a table<br />at home</span></div>
+          <div className="card baskets" onClick={()=>{
+            window.open("https://youtu.be/LtaW6dKSn-U","_self")
+          }}><span>Knit baskets on<br />your own</span></div>
+          <div className="card sweater" onClick={()=>{
+            window.open("https://youtu.be/EhtD0tcqc6E","_self")
+          }}><span>Knit sweater on<br />your own</span></div>
+          <div className="card canvas" onClick={()=>{
+            window.open("https://youtu.be/-SQuTiu8wWU","_self")
+          }}><span>Painting a canvas on<br />your own</span></div>
+          </div>
       </div>
 
       {/* Footer */}

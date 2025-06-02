@@ -23,7 +23,7 @@ function App() {
         <Route path="/diy" element={<DiyPage />} />
         <Route path="/ai" element={<AiPage />} />
         <Route path="/study" element={<StudyPage />} />
-       
+        
         {/* Add more routes as needed */}
       </Routes>
     

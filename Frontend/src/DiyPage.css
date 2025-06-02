@@ -109,6 +109,14 @@
   background-image: url('https://i.pinimg.com/736x/a3/80/77/a380776d263081f618940ba3eac741a1.jpg');
 }
 
+.sweater {
+  background-image: url('https://i.pinimg.com/736x/d9/ea/d4/d9ead40e9955c055b99487e82d7f7e43.jpg');
+}
+
+.canvas {
+  background-image: url('https://i.pinimg.com/736x/d4/b8/84/d4b884e7e168c8671ba07959496f3f86.jpg');
+}
+
 /* Footer */
 .footer {
   display: flex;

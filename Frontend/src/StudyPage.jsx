@@ -14,6 +14,7 @@ function StudyPage() {
           <li><Link to="/fitness">Fitness</Link></li>
           <li><Link to="/diy">DIY</Link></li>
           <li><Link to="/ai">AI</Link></li>
+          <li><Link to="/videos">Videos</Link></li>
           <li className="active">Study</li>
         </ul>
         <div className="search-bar">
@@ -28,15 +29,24 @@ function StudyPage() {
 
         <h3 className="section-heading">Summaries of topics</h3>
         <div className="card-container">
-          <div className="card design"><span>Designing for begginers</span></div>
-          <div className="card accounts"><span>Accounts for students</span></div>
-          <div className="card coding"><span>Coding for begginers</span></div>
+          <div className="card design" onClick={()=>{
+            window.open("https://youtu.be/GQS7wPujL2k","_self")
+          }}><span>Designing for begginers</span></div>
+          <div className="card accounts" onClick={()=>{
+            window.open("https://youtu.be/yYX4bvQSqbo","_self")
+          }}><span>Accounts for students</span></div>
+          <div className="card coding" onClick={()=>{
+            window.open("https://youtu.be/eKqY-oP1d_Y","_self")
+          }}><span>Coding for begginers</span></div>
+          <div className="card editing" onClick={()=>{
+            window.open("https://youtu.be/y7Ci_H9bYEk","_self")
+          }}><span>Editing for youtubers</span></div>
+          <div className="card templates" onClick={()=>{
+            window.open("https://youtu.be/r7hULM1qRf4","_self")
+          }}><span>Templates for videos</span></div>
         </div>
 
-        <h3 className="section-heading">Connect with other students</h3>
-        <div className="card-container">
-          <div className="card connect"><span>Join Now</span></div>
-        </div>
+        
       </div>
 
       {/* Footer */}

@@ -1,8 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AiPage.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function AiPage() {
+  const [messages, setMessages] = useState([
+    { role: 'bot', content: 'Hi, what can I help you with?' }
+  ]);
+  const [input, setInput] = useState('');
+
+  const handleSend = async () => {
+    if (!input.trim()) return;
+
+    // Add user's message to chat
+    const newMessages = [...messages, { role: 'user', content: input }];
+    setMessages(newMessages);
+    setInput('');
+
+    try {
+      const response = await axios.post(
+        'http://localhost:8080/ai/chat',
+        {
+          messages: newMessages.map(m => ({
+            role: m.role === 'user' ? 'user' : 'assistant',
+            content: m.content
+          }))
+        }
+      );
+
+      const botReply = response.data.reply;
+      setMessages([...newMessages, { role: 'bot', content: botReply }]);
+    } catch (error) {
+      console.error('Error calling AI:', error);
+    }
+  };
+
   return (
     <div className="ai-page">
       {/* Navbar */}
@@ -24,12 +56,24 @@ function AiPage() {
 
       {/* Chat Interface */}
       <div className="chat-box">
-        <div className="message bot">Hi, what can I help you with?</div>
-        <div className="message user">Whats the weather today??</div>
+        {messages.map((msg, idx) => (
+          <div
+            key={idx}
+            className={`message ${msg.role === 'user' ? 'user' : 'bot'}`}
+          >
+            {msg.content}
+          </div>
+        ))}
         <div className="input-area">
           <span role="img" aria-label="image">🖼️</span>
-          <input type="text" placeholder="Hello, How can I help?" />
-          <span role="img" aria-label="send">⤴️</span>
+          <input
+            type="text"
+            placeholder="Hello, how can I help?"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+          />
+          <span role="img" aria-label="send" onClick={handleSend} style={{ cursor: 'pointer' }}>⤴️</span>
         </div>
       </div>
     </div>

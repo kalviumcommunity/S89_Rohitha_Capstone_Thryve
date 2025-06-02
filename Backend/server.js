@@ -66,8 +66,10 @@ app.get("/auth/google",
 app.get("/auth/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
   (req, res) => {
-    // Redirect or respond as needed
-    res.redirect("http://localhost:5173/main"); // Change to your frontend route
+    // Send user info as query params
+    const name = encodeURIComponent(req.user.name);
+    const email = encodeURIComponent(req.user.email);
+    res.redirect(`http://localhost:5173/main?name=${name}&email=${email}`);
   }
 );
 
@@ -77,6 +79,7 @@ const foodRouter = require("./controller/foodRouter");
 const studyRouter = require("./controller/studyRouter");
 const aiRouter = require("./controller/aiRouter");
 const userRouter = require("./controller/userRouter");
+const uploadRouter = require('./controller/uploadRouter');
 
 app.use("/diy", diyRouter);
 app.use("/fitness", fitnessRouter);
@@ -84,6 +87,8 @@ app.use("/food", foodRouter);
 app.use("/study", studyRouter);
 app.use("/ai", aiRouter);
 app.use("/user", userRouter);
+app.use("/recipes", uploadRouter);
+app.use('/uploads', express.static('uploads'));
 app.listen(8080, async () => {
     try {
         await mongoose.connect(process.env.MONGO_URL);

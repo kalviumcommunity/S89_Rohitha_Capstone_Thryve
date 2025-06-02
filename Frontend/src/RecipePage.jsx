@@ -88,7 +88,7 @@ function RecipePage() {
             <span>📸</span>
             <span>🐦</span>
             <span>📘</span>
-            <span>▶️</span>
+            <span>▶</span>
           </div>
         </div>
       </footer>

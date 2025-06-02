@@ -10,28 +10,35 @@ function LoginPage() {
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await axios.post("http://localhost:8080/user/login", {
-        email,
-        password,
-      });
+  try {
+    const response = await axios.post("http://localhost:8080/user/login", {
+      email,
+      password,
+    });
 
-      if (response.status === 200) {
-        // Successful login
-        alert("Login successful!");
-        navigate("/main"); // Change this to your actual home/dashboard path
-      }
-    } catch (err) {
-      console.error("Login error:", err);
-      if (err.response && err.response.data && err.response.data.message) {
-        setError(err.response.data.message);
-      } else {
-        setError("Invalid email or password");
-      }
+    if (response.status === 200) {
+      // Store user info in localStorage
+      localStorage.setItem(
+        'user',
+        JSON.stringify({
+          name: response.data.name,   // Make sure this matches your backend response
+          email: response.data.email, // Make sure this matches your backend response
+        })
+      );
+      alert("Login successful!");
+      navigate("/main");
     }
-  };
+  } catch (err) {
+    console.error("Login error:", err);
+    if (err.response && err.response.data && err.response.data.message) {
+      setError(err.response.data.message);
+    } else {
+      setError("Invalid email or password");
+    }
+  }
+};
 
   return (
     <div className="login-container">

@@ -42,4 +42,33 @@ uploadRouter.get('/videos', (req, res) => {
   });
 });
 
+// DELETE /recipes/videos/:filename
+uploadRouter.delete('/videos/:filename', (req, res) => {
+  const filename = req.params.filename;
+  const filePath = path.join(uploadDir, filename);
+  fs.unlink(filePath, (err) => {
+    if (err) {
+      return res.status(500).json({ message: 'Failed to delete video.' });
+    }
+    res.json({ message: 'Video deleted successfully.' });
+  });
+});
+
+// (Optional) Edit/Rename endpoint
+uploadRouter.put('/videos/:filename', (req, res) => {
+  const oldName = req.params.filename;
+  const newName = req.body.newName;
+  if (!newName) return res.status(400).json({ message: 'New name required.' });
+
+  const oldPath = path.join(uploadDir, oldName);
+  const newPath = path.join(uploadDir, newName);
+
+  fs.rename(oldPath, newPath, (err) => {
+    if (err) {
+      return res.status(500).json({ message: 'Failed to rename video.' });
+    }
+    res.json({ message: 'Video renamed successfully.' });
+  });
+});
+
 module.exports = uploadRouter;

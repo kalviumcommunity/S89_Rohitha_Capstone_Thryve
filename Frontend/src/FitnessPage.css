@@ -1,13 +1,13 @@
 .fitness-page {
-  background-image: url('https://images.unsplash.com/photo-1534367610401-ec7d9e3249d7'); /* full background */
+  background-image: url('https://images.unsplash.com/photo-1534367610401-ec7d9e3249d7');
   background-size: cover;
   background-position: center;
   color: black;
   font-family: 'Segoe UI', sans-serif;
   min-height: 100vh;
 }
-
-.navbar {
+/* Navbar styling like RecipePage */
+.fitness-navbar {
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -16,28 +16,36 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
+.fitness-logo {
   font-size: 24px;
   font-weight: bold;
 }
 
-.nav-links {
+.fitness-nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
   padding-left: 0;
+  margin: 0;
 }
 
-.nav-links li {
+.fitness-nav-links li {
   cursor: pointer;
 }
 
-.nav-links .active {
+.fitness-nav-links .active a,
+.fitness-nav-links li.active a {
   font-weight: bold;
   text-decoration: underline;
 }
 
-.search-bar {
+.fitness-nav-links li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.fitness-search-bar {
   display: flex;
   align-items: center;
   background-color: #f3f3f3;
@@ -45,35 +53,47 @@
   border-radius: 20px;
 }
 
-.search-bar input {
+.fitness-search-bar input {
   border: none;
   background: transparent;
   margin-right: 5px;
   outline: none;
 }
 
-.heading {
+.fitness-heading {
   padding: 40px 30px 10px;
   font-size: 24px;
   font-weight: 600;
 }
 
-.section {
+.fitness-section {
   padding: 20px 30px;
 }
 
-.section h3 {
+.fitness-section h3 {
   font-size: 18px;
   margin-bottom: 15px;
 }
 
-.card-container {
+.fitness-card-container {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 28px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 16px;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  min-width: 0;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.fitness-card-container::-webkit-scrollbar {
+  display: none;
 }
 
-.card {
+.fitness-card {
   width: 280px;
   height: 170px;
   background-size: cover;
@@ -81,59 +101,58 @@
   position: relative;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 32px 28px 20px 28px;
+  flex: 0 0 auto;
 }
 
-.card span {
+.fitness-card span {
   position: absolute;
-  bottom: 10px;
-  left: 15px;
+  bottom: 18px;
+  left: 24px;
   color: white;
   font-weight: bold;
   text-shadow: 1px 1px 2px black;
+  font-size: 1.15em;
 }
 
 /* Specific card backgrounds */
-.weights {
+.fitness-weights {
   background-image: url('https://i.pinimg.com/736x/a8/af/4a/a8af4ac4e7fe68b9bc83cc213b7bceaa.jpg');
 }
-
-.running {
+.fitness-running {
   background-image: url('https://i.pinimg.com/736x/54/06/d6/5406d6bac759851425da523ad02b7148.jpg');
 }
-
-.planks {
+.fitness-planks {
   background-image: url('https://i.pinimg.com/736x/34/37/35/34373547ec84fceb6c85d9c3cc1ea81e.jpg');
 }
-
-.meditation {
+.fitness-meditation {
   background-image: url('https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRsnJ2XNfygS-ZZ2xJls3ADKu5c2R7wFeSytLSwYHVMEz2CGrod');
 }
-
-.breathing {
+.fitness-breathing {
   background-image: url('https://i.pinimg.com/736x/3b/80/ea/3b80ea1630878b2cc9183535c0a02ba5.jpg');
 }
-
-.yoga {
+.fitness-yoga {
   background-image: url('https://i.pinimg.com/736x/09/60/bc/0960bc04fb727aa9acd969cc42388dc7.jpg');
 }
-
-.crunches {
+.fitness-crunches {
   background-image: url('https://i.pinimg.com/736x/52/cc/21/52cc21abfed61735f2adf743141088cb.jpg');
 }
-
-.exercise {
+.fitness-exercise {
   background-image: url('https://i.pinimg.com/736x/ad/a6/82/ada6829fa5e3cbcf6751462a8c3488d5.jpg');
 }
-
-.asanas {
+.fitness-asanas {
   background-image: url('https://i.pinimg.com/736x/7c/82/98/7c82989fd4e49eb202092e77696e7736.jpg');
 }
-
-.pranayamam {
+.fitness-pranayamam {
   background-image: url('https://i.pinimg.com/736x/5f/03/2a/5f032a692f6392ef15fcd22c018c9e34.jpg');
 }
 
-.footer {
+.fitness-footer {
   display: flex;
   justify-content: space-between;
   background: white;
@@ -142,16 +161,16 @@
   margin-top: 40px;
 }
 
-.footer .about {
+.fitness-footer .fitness-about {
   max-width: 400px;
   font-size: 14px;
 }
 
-.footer .contact {
+.fitness-footer .fitness-contact {
   font-size: 14px;
 }
 
-.social-icons {
+.fitness-social-icons {
   display: flex;
   gap: 15px;
   font-size: 20px;

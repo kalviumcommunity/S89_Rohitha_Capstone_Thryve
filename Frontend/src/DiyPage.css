@@ -1,44 +1,53 @@
 .diy-page {
-  background-image: url('https://images.unsplash.com/photo-1602524818561-4272c8e6c1b5'); /* Replace with actual background */
+  background-image: url('https://images.unsplash.com/photo-1602524818561-4272c8e6c1b5');
   background-size: cover;
   background-position: center;
   color: black;
   font-family: 'Segoe UI', sans-serif;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Navbar */
-.navbar {
+/* Navbar (like FitnessPage) */
+.diy-navbar {
   background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-decoration: bold;
 }
 
-.logo {
+.diy-logo {
   font-size: 24px;
   font-weight: bold;
 }
 
-.nav-links {
+.diy-nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
   padding-left: 0;
+  margin: 0;
 }
 
-.nav-links li {
+.diy-nav-links li {
   cursor: pointer;
+  font-weight: bold;           /* All nav items bold */
 }
 
-.nav-links .active {
-  font-weight: bold;
-  text-decoration: underline;
+.diy-nav-links li a {
+  text-decoration: none;       /* Remove underline from all links */
+  color: inherit;
 }
 
-.search-bar {
+.diy-active  {
+  text-decoration: underline;  /* Underline only the active one */
+}
+
+.diy-search-bar {
   display: flex;
   align-items: center;
   background-color: #f3f3f3;
@@ -46,7 +55,7 @@
   border-radius: 20px;
 }
 
-.search-bar input {
+.diy-search-bar input {
   border: none;
   background: transparent;
   margin-right: 5px;
@@ -54,29 +63,43 @@
 }
 
 /* Headings */
-.heading {
+.diy-heading {
   padding: 40px 30px 10px;
   font-size: 24px;
   font-weight: 600;
 }
 
-.section {
+.diy-section {
   padding: 20px 30px;
 }
 
-.section h3 {
+.diy-section h3 {
   font-size: 18px;
   margin-bottom: 15px;
 }
 
 /* Cards */
-.card-container {
+/* ...existing code... */
+
+.diy-card-container {
   display: flex;
+  flex-direction: row;
   gap: 20px;
-  flex-wrap: wrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+  min-width: 0;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.diy-card-container::-webkit-scrollbar {
+  display: none;
 }
 
-.card {
+.diy-card {
   width: 280px;
   height: 170px;
   background-size: cover;
@@ -84,9 +107,12 @@
   position: relative;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  flex: 0 0 auto; /* Prevents cards from shrinking/growing */
 }
 
-.card span {
+/* ...rest of your code... */
+
+.diy-card span {
   position: absolute;
   bottom: 10px;
   left: 15px;
@@ -97,46 +123,46 @@
 }
 
 /* Specific card backgrounds */
-.pottery {
+.diy-pottery {
   background-image: url('https://i.pinimg.com/736x/18/db/24/18db24d4b9ef75cb77a78fc8ebf759fc.jpg');
 }
 
-.table {
+.diy-table {
   background-image: url('https://i.pinimg.com/736x/4b/d1/5f/4bd15f2729a5c101de796510d5e4e3e6.jpg');
 }
 
-.baskets {
+.diy-baskets {
   background-image: url('https://i.pinimg.com/736x/a3/80/77/a380776d263081f618940ba3eac741a1.jpg');
 }
 
-.sweater {
+.diy-sweater {
   background-image: url('https://i.pinimg.com/736x/d9/ea/d4/d9ead40e9955c055b99487e82d7f7e43.jpg');
 }
 
-.canvas {
+.diy-canvas {
   background-image: url('https://i.pinimg.com/736x/d4/b8/84/d4b884e7e168c8671ba07959496f3f86.jpg');
 }
 
-/* Footer */
-.footer {
+/* Footer always at the bottom */
+.diy-footer {
   display: flex;
   justify-content: space-between;
   background: white;
   padding: 30px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: auto; /* Pushes footer to the bottom */
 }
 
-.footer .about {
+.diy-about {
   max-width: 400px;
   font-size: 14px;
 }
 
-.footer .contact {
+.diy-contact {
   font-size: 14px;
 }
 
-.social-icons {
+.diy-social-icons {
   display: flex;
   gap: 15px;
   font-size: 20px;

@@ -1,14 +1,13 @@
-.recipe-page {
-  background-image: url(''); /* background */
+.recipe-container {
+  background-image: url('');
   background-size: cover;
   background-position: center;
   color: black;
   font-family: 'Segoe UI', sans-serif;
   min-height: 100vh;
-
 }
 
-.navbar {
+.recipe-navbar {
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -17,28 +16,34 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
+.recipe-logo {
   font-size: 24px;
   font-weight: bold;
 }
 
-.nav-links {
+.recipe-nav-links {
   list-style: none;
   display: flex;
   gap: 25px;
   padding-left: 0;
 }
 
-.nav-links li {
+.recipe-nav-links li {
   cursor: pointer;
 }
 
-.nav-links .active {
+.recipe-nav-links .active a {
   font-weight: bold;
   text-decoration: underline;
 }
 
-.search-bar {
+.recipe-nav-links li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.recipe-search-bar {
   display: flex;
   align-items: center;
   background-color: #f3f3f3;
@@ -46,132 +51,124 @@
   border-radius: 20px;
 }
 
-.search-bar input {
+.recipe-search-bar input {
   border: none;
   background: transparent;
   margin-right: 5px;
   outline: none;
 }
 
-.heading {
+.recipe-heading {
   padding: 40px 30px 10px;
   font-size: 24px;
   font-weight: 600;
 }
 
-.section {
+.recipe-section {
   padding: 20px 30px;
 }
 
-.section h3 {
+.recipe-section h3 {
   font-size: 18px;
   margin-bottom: 15px;
 }
 
-.card-container {
+.recipe-card-container {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 28px; /* slightly more space between cards */
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 16px;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+  min-width: 0;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.recipe-card-container::-webkit-scrollbar {
+  display: none;
 }
 
-.card {
+.recipe-card {
   width: 280px;
-  height: 170px;
+  height: 170px;    /* Reduced height */
   background-size: cover;
   background-position: center;
   position: relative;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.recipe-page .card{
-  width: 265px;
-  height: 150px;
-  border-radius: 15px;
-  padding: 40px;
-  padding-left: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  color: white;
   display: flex;
   align-items: flex-end;
   font-weight: bold;
-  font-size: 16px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-  background-size: cover;
-  background-position: center;
-  color: white;
-  
+  font-size: 15px;
+  padding: 32px 28px 20px 28px; /* Adjusted padding for new height */
+  flex: 0 0 auto;
 }
 
-.card span {
-  
+.recipe-card span {
   position: absolute;
-  bottom: 10px;
-  left: 15px;
+  bottom: 18px;
+  left: 24px;
   color: white;
   font-weight: bold;
   text-shadow: 1px 1px 2px black;
+  font-size: 1.15em;
 }
 
 /* Card-specific background images */
 .brownies {
   background-image: url('https://i.pinimg.com/736x/e4/38/70/e43870e4dac00cc716c55c96ff5a6593.jpg');
 }
-
 .pasta {
   background-image: url('https://i.pinimg.com/736x/22/8b/7d/228b7d0cddfc7281a9f238f73456fcf1.jpg');
 }
-
 .soup {
   background-image: url('https://i.pinimg.com/736x/29/3e/de/293edeb6b21cba131de831ba5663816c.jpg');
 }
-
 .sandwich {
   background-image: url('https://i.pinimg.com/736x/28/5f/e4/285fe42b209ea0dd35665fcc0f453f23.jpg');
 }
-
 .tacos {
   background-image: url('https://i.pinimg.com/736x/db/c4/c0/dbc4c003d5674030efe2173d2b8dcbce.jpg');
 }
-
 .rolls {
   background-image: url('https://i.pinimg.com/736x/6a/38/99/6a3899ae46c71571f7f8bffaf368e926.jpg');
 }
-
 .white {
   background-image: url('https://i.pinimg.com/736x/61/05/5a/61055a4336293f54810eaf8548b83c32.jpg');
 }
-
 .manchuria {
   background-image: url('https://i.pinimg.com/736x/45/c0/cf/45c0cf2587f9f1aa3dfb09b22aa92084.jpg');
 }
-
 .rice {
   background-image: url('https://i.pinimg.com/736x/b9/ff/32/b9ff32c78f37aae474dded1be3d48d45.jpg');
 }
-
 .curry {
   background-image: url('https://i.pinimg.com/736x/29/ac/b4/29acb49173c63030c814fe6808a75a09.jpg');
 }
 
-.footer {
+.recipe-footer {
   display: flex;
   justify-content: space-between;
   background: white;
   padding: 30px;
   flex-wrap: wrap;
   margin-top: 40px;
-  
 }
 
-.footer .about {
+.recipe-about {
   max-width: 400px;
   font-size: 14px;
 }
 
-.footer .contact {
+.recipe-contact {
   font-size: 14px;
 }
 
-.social-icons {
+.recipe-social-icons {
   display: flex;
   gap: 15px;
   font-size: 20px;

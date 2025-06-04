@@ -7,77 +7,63 @@ function FitnessPage() {
   return (
     <div className="fitness-page">
       {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">Thryve</div>
-        <ul className="nav-links">
+      <nav className="fitness-navbar">
+        <div className="fitness-logo">Thryve</div>
+        <ul className="fitness-nav-links">
           <li><Link to="/main">Home</Link></li>
           <li><Link to="/recipes">Recipes</Link></li>
-          <li className="active">Fitness</li>
+          <li className="active"><Link to="/fitness">Fitness</Link></li>
           <li><Link to="/diy">DIY</Link></li>
           <li><Link to="/ai">AI</Link></li>
           <li><Link to="/study">Study</Link></li>
           <li><Link to="/videos">Videos</Link></li>
         </ul>
-        <div className="search-bar">
+        <div className="fitness-search-bar">
           <input type="text" placeholder="Search" />
           <span role="img" aria-label="search">🔍</span>
         </div>
       </nav>
 
-      {/* Headings */}
-      <div className="heading">
+      <div className="fitness-heading">
         <h2>Burn all those extra<br />calories off</h2>
       </div>
 
-      <div className="section">
+      <div className="fitness-section">
         <h3>Fitness at home</h3>
-        <div className="card-container">
-          <div className="card weights" onClick={()=>{
-            window.open("https://youtu.be/I37XBO_re98","_self")
-          }}><span>Weights tutorial at home</span></div>
-          <div className="card running" onClick={()=>{
-            window.open("https://youtu.be/kVnyY17VS9Y","_self")
-          }}><span>Running methods at home</span></div>
-          <div className="card planks" onClick={()=>{
-            window.open("https://youtu.be/pvIjsG5Svck","_self")
-          }}><span>Abdomens and planks</span></div>
-          <div className="card crunches" onClick={()=>{
-            window.open("https://youtu.be/0t4t3IpiEao","_self")
-          }}><span>5 min crunches </span></div>
-          <div className="card exercise" onClick={()=>{
-            window.open("https://youtu.be/LhhWNixj5zE","_self")
-          }}><span>Hand and Leg exercises</span></div>
+        <div className="fitness-card-container">
+          <div className="fitness-card fitness-weights" onClick={() => window.open("https://youtu.be/2tM1LFFxeKg", "_self")}><span>Weights tutorial at home</span></div>
+          <div className="fitness-card fitness-running" onClick={() => window.open("https://youtu.be/5r7w3R6eF2o", "_self")}><span>Running methods at home</span></div>
+          <div className="fitness-card fitness-planks" onClick={() => window.open("https://youtu.be/pSHjTRCQxIw", "_self")}><span>Abdomens and planks</span></div>
+          <div className="fitness-card fitness-crunches" onClick={() => window.open("https://youtu.be/Xyd_fa5zoEU", "_self")}><span>5 min crunches</span></div>
+          <div className="fitness-card fitness-exercise" onClick={() => window.open("https://youtu.be/2pLT-olgUJs", "_self")}><span>Hand and Leg exercises</span></div>
+          <div className="fitness-card fitness-planks" onClick={() => window.open("https://youtu.be/pSHjTRCQxIw", "_self")}><span>Abdomens and planks</span></div>
+          <div className="fitness-card fitness-crunches" onClick={() => window.open("https://youtu.be/Xyd_fa5zoEU", "_self")}><span>5 min crunches</span></div>
+          <div className="fitness-card fitness-exercise" onClick={() => window.open("https://youtu.be/2pLT-olgUJs", "_self")}><span>Hand and Leg exercises</span></div>
+          <div className="fitness-card fitness-exercise" onClick={() => window.open("https://youtu.be/2pLT-olgUJs", "_self")}><span>Hand and Leg exercises</span></div>
         </div>
       </div>
 
-      <div className="heading">
-        <h2>Be patient and clam<br />at any situation</h2>
+      <div className="fitness-heading">
+        <h2>Be patient and calm<br />at any situation</h2>
       </div>
 
-      <div className="section">
+      <div className="fitness-section">
         <h3>Yoga and Meditation</h3>
-        <div className="card-container">
-          <div className="card meditation" onClick={()=>{
-            window.open("https://youtu.be/inpok4MKVLM","_self")
-          }}><span>5 min Meditation at home</span></div>
-          <div className="card breathing" onClick={()=>{
-            window.open("https://youtu.be/-7-CAFhJn78","_self")
-          }}><span>Breathing exercises at home</span></div>
-          <div className="card yoga" onClick={()=>{
-            window.open("https://youtu.be/EvMTrP8eRvM","_self")
-          }}><span>Simple yoga at home</span></div>
-          <div className="card asanas" onClick={()=>{
-            window.open("https://youtu.be/LYxxH1hFj9E","_self")
-          }}><span>Asanas at home</span></div>
-          <div className="card pranayamam" onClick={()=>{
-            window.open("https://youtu.be/I77hh5I69gA","_self")
-          }}><span>Pranayamam</span></div>
+        <div className="fitness-card-container">
+          <div className="fitness-card fitness-meditation" onClick={() => window.open("https://youtu.be/inpok4MKVLM", "_self")}><span>5 min Meditation at home</span></div>
+          <div className="fitness-card fitness-breathing" onClick={() => window.open("https://youtu.be/8VwufJrUhic", "_self")}><span>Breathing exercises at home</span></div>
+          <div className="fitness-card fitness-yoga" onClick={() => window.open("https://youtu.be/EvMTrP8eRvM", "_self")}><span>Simple yoga at home</span></div>
+          <div className="fitness-card fitness-asanas" onClick={() => window.open("https://youtu.be/LYxxH1hFj9E", "_self")}><span>Asanas at home</span></div>
+          <div className="fitness-card fitness-pranayamam" onClick={() => window.open("https://youtu.be/I77hh5I69gA", "_self")}><span>Pranayamam</span></div>
+          <div className="fitness-card fitness-yoga" onClick={() => window.open("https://youtu.be/EvMTrP8eRvM", "_self")}><span>Simple yoga at home</span></div>
+          <div className="fitness-card fitness-asanas" onClick={() => window.open("https://youtu.be/LYxxH1hFj9E", "_self")}><span>Asanas at home</span></div>
+          <div className="fitness-card fitness-pranayamam" onClick={() => window.open("https://youtu.be/I77hh5I69gA", "_self")}><span>Pranayamam</span></div>
+          <div className="fitness-card fitness-pranayamam" onClick={() => window.open("https://youtu.be/I77hh5I69gA", "_self")}><span>Pranayamam</span></div>
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="about">
+      <footer className="fitness-footer">
+        <div className="fitness-about">
           <h4>About our website</h4>
           <p>
             Welcome to Thryve, the ultimate online hub designed by a student, for students.
@@ -85,9 +71,9 @@ function FitnessPage() {
             fit and eat healthy, we’ve got you covered
           </p>
         </div>
-        <div className="contact">
+        <div className="fitness-contact">
           <strong>Contact:</strong> +91 9494568800, +91 8500016359
-          <div className="social-icons">
+          <div className="fitness-social-icons">
             <span>📸</span>
             <span>🐦</span>
             <span>📘</span>

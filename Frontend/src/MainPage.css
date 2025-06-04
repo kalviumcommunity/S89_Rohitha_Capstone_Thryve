@@ -1,17 +1,20 @@
 .main-page {
-  height: 100%;
+ 
   background-image: url('https://i.pinimg.com/736x/f9/f4/a4/f9f4a4631393f2e63d23c0a968ad65f0.jpg'); /* Replace with your actual background */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   font-family: 'Segoe UI', sans-serif;
-  
+  min-height: 100vh;
 }
 
 .main-page .background-overlay {
   background-color: rgba(233, 229, 229, 0.502);
+  /* Removed padding-bottom to eliminate extra whitespace */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  padding-bottom: 40px;
 }
 
 /* Navbar */
@@ -59,7 +62,7 @@
 
 /* Quote */
 .main-page .quote {
-    margin: auto; /* auto left margin pushes it to the right */
+  margin: auto;
   text-align: center;
   font-size: 16px;
   background: white;
@@ -69,9 +72,9 @@
   font-weight: 500;
 }
 
-.main-page .quote-section{
-    padding-top: 2.5rem;
-    color: rgb(12, 12, 12);
+.main-page .quote-section {
+  padding-top: 2.5rem;
+  color: rgb(12, 12, 12);
 }
 
 /* Welcome Section */
@@ -99,7 +102,6 @@
   display: flex;
   gap: 45px;
   flex-wrap: wrap;
-
 }
 
 .main-page .card {
@@ -116,13 +118,7 @@
   background-size: cover;
   background-position: center;
   color: white;
-}
-
-.main-page .card {
   position: relative;
-  background-size: cover;
-  background-position: center;
-  color: white;
   overflow: hidden;
 }
 
@@ -142,12 +138,9 @@
   z-index: 1;
 }
 
-
 .main-page .card1 {
-
   background-image: url('https://i.pinimg.com/736x/29/3e/de/293edeb6b21cba131de831ba5663816c.jpg');
 }
-
 
 .main-page .card2 {
   background-image: url('https://i.pinimg.com/736x/09/60/bc/0960bc04fb727aa9acd969cc42388dc7.jpg');
@@ -162,51 +155,51 @@
 }
 
 /* Footer */
-  footer {
-    background-color: rgba(255, 255, 255, 0.9);
-    color: black;
-    padding: 32px 60px;
-    margin-top: 32px;
-   
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 2000px;
-    margin: auto;
-  }
-  
-  .footer-left,
-  .footer-right {
-    width: 100%;
-    max-width: 30%;
-  }
-  
-  .footer-left h3,
-  .footer-right h3 {
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .footer-icons {
-    display: flex;
-    gap: 16px;
-    margin-top: 8px;
-  }
-  
-  .footer-icons i {
-    width: 20px;
-    height: 20px;
-    color: black;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .footer-icons i:hover {
-    transform: scale(1.1);
-    color: #0077b6;
-  }
+footer {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 32px 60px;
+  margin-top: 0; /* Changed from 32px to 0 to remove extra space */
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 2000px;
+  margin: auto;
+}
+
+.footer-left,
+.footer-right {
+  width: 100%;
+  max-width: 30%;
+}
+
+.footer-left h3,
+.footer-right h3 {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.footer-icons i {
+  width: 20px;
+  height: 20px;
+  color: black;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-icons i:hover {
+  transform: scale(1.1);
+  color: #0077b6;
+}
 
 .main-page .socials span {
   font-size: 20px;
@@ -226,7 +219,7 @@
 /* Style each navigation link */
 .navbar ul li a {
   text-decoration: none;
-  color: #333333; /* Softer black */
+  color: #333333;
   font-weight: bold;
   font-size: 16px;
   transition: color 0.3s ease;
@@ -234,7 +227,7 @@
 
 /* Optional hover effect */
 .navbar ul li a:hover {
-  color: #555555; /* Even lighter gray on hover */
+  color: #555555;
   text-decoration: underline;
 }
 
@@ -242,12 +235,14 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  flex: 1;
 }
 
 .content-area {
   flex: 1;
 }
 
+/* Floating Add Button */
 .floating-add-btn {
   position: fixed;
   bottom: 100px; /* Adjust so it's above the footer */
@@ -268,4 +263,3 @@
   background: #2d8cff;
   color: #fff;
 }
-

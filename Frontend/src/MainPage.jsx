@@ -23,6 +23,33 @@ function MainPage() {
   // State for the current quote
   const [quote, setQuote] = useState(quotes[0]);
 
+  // Notes modal state
+  const [showNotes, setShowNotes] = useState(false);
+
+  // Calendar modal state
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(() => {
+    return localStorage.getItem('userCalendarDate') || '';
+  });
+  const [calendarEvents, setCalendarEvents] = useState(() => {
+    const saved = localStorage.getItem('userCalendarEvents');
+    return saved ? JSON.parse(saved) : {};
+  });
+  const [eventInput, setEventInput] = useState('');
+
+  // Notes array: [{id, title, content}]
+  const [notesList, setNotesList] = useState(() => {
+    const saved = localStorage.getItem('userNotesList');
+    return saved ? JSON.parse(saved) : [{ id: 1, title: "Note 1", content: "" }];
+  });
+  const [activeNoteId, setActiveNoteId] = useState(
+    () => (JSON.parse(localStorage.getItem('userNotesList'))?.[0]?.id || 1)
+  );
+
+  useEffect(() => {
+    localStorage.setItem('userNotesList', JSON.stringify(notesList));
+  }, [notesList]);
+
   // Store user info from query params if present (for Google OAuth)
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -30,7 +57,6 @@ function MainPage() {
     const email = params.get("email");
     if (name && email) {
       localStorage.setItem("user", JSON.stringify({ name, email }));
-      // Optionally, you can remove the query params from the URL:
       window.history.replaceState({}, document.title, "/main");
     }
   }, [location.search]);
@@ -69,6 +95,82 @@ function MainPage() {
     }
   };
 
+  // Notes handlers
+  const handleNotesOpen = () => setShowNotes(true);
+  const handleNotesClose = () => setShowNotes(false);
+
+  const handleNoteChange = (e) => {
+    setNotesList(notesList.map(note =>
+      note.id === activeNoteId ? { ...note, content: e.target.value } : note
+    ));
+  };
+
+  const handleAddNote = () => {
+    const newId = notesList.length ? Math.max(...notesList.map(n => n.id)) + 1 : 1;
+    const newNote = { id: newId, title: `Note ${newId}`, content: "" };
+    setNotesList([...notesList, newNote]);
+    setActiveNoteId(newId);
+  };
+
+  const handleDeleteNote = (id) => {
+    const filtered = notesList.filter(note => note.id !== id);
+    setNotesList(filtered.length ? filtered : [{ id: 1, title: "Note 1", content: "" }]);
+    setActiveNoteId(filtered.length ? filtered[0].id : 1);
+  };
+
+  const handleSwitchNote = (id) => setActiveNoteId(id);
+
+  const activeNote = notesList.find(note => note.id === activeNoteId) || notesList[0];
+
+  // Calendar handlers
+  const handleCalendarOpen = () => setShowCalendar(true);
+  const handleCalendarClose = () => setShowCalendar(false);
+  const handleDateChange = (e) => {
+    setSelectedDate(e.target.value);
+    localStorage.setItem('userCalendarDate', e.target.value);
+  };
+  const handleEventInput = (e) => setEventInput(e.target.value);
+
+  const handleAddEvent = () => {
+    if (!selectedDate || !eventInput.trim()) return;
+    const updated = {
+      ...calendarEvents,
+      [selectedDate]: [...(calendarEvents[selectedDate] || []), eventInput.trim()]
+    };
+    setCalendarEvents(updated);
+    setEventInput('');
+    localStorage.setItem('userCalendarEvents', JSON.stringify(updated));
+  };
+
+  const handleDeleteEvent = (date, idx) => {
+    const updated = { ...calendarEvents };
+    updated[date].splice(idx, 1);
+    if (updated[date].length === 0) delete updated[date];
+    setCalendarEvents(updated);
+    localStorage.setItem('userCalendarEvents', JSON.stringify(updated));
+  };
+
+  // Show notification for today's events
+  useEffect(() => {
+    if (!("Notification" in window)) return;
+    if (Notification.permission !== "granted") {
+      Notification.requestPermission();
+    }
+    const today = new Date().toISOString().slice(0, 10);
+    const todaysEvents = calendarEvents[today];
+    if (todaysEvents && todaysEvents.length > 0) {
+      Notification.requestPermission().then(permission => {
+        if (permission === "granted") {
+          new Notification("Today's Events", {
+            body: todaysEvents.join('\n')
+          });
+        }
+      });
+    }
+    // Only run on mount
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <div className="main-page">
       <header className="navbar">
@@ -86,8 +188,8 @@ function MainPage() {
         </nav>
         <div className="icons">
           <input type="text" placeholder="Search" className="search-box" />
-          <span className="icon">📋</span>
-          <span className="icon">📅</span>
+          <span className="icon" style={{ cursor: "pointer" }} onClick={handleNotesOpen}>📋</span>
+          <span className="icon" style={{ cursor: "pointer" }} onClick={handleCalendarOpen}>📅</span>
           <span className="icon">👤</span>
         </div>
       </header>
@@ -166,6 +268,87 @@ function MainPage() {
           +
         </button>
       </div>
+
+      {/* Notes Modal with multiple notes */}
+      {showNotes && (
+        <div className="notes-modal">
+          <div className="notes-content">
+            <div className="notes-header">
+              <span>📝 Notes</span>
+              <button className="notes-close" onClick={handleNotesClose}>×</button>
+            </div>
+            <div className="notes-tabs">
+              {notesList.map(note => (
+                <div
+                  key={note.id}
+                  className={`notes-tab${note.id === activeNoteId ? " active" : ""}`}
+                  onClick={() => handleSwitchNote(note.id)}
+                >
+                  {note.title}
+                  {notesList.length > 1 && (
+                    <span
+                      className="notes-delete"
+                      onClick={e => { e.stopPropagation(); handleDeleteNote(note.id); }}
+                      title="Delete note"
+                    >×</span>
+                  )}
+                </div>
+              ))}
+              <button className="notes-add" onClick={handleAddNote} title="Add note">+</button>
+            </div>
+            <textarea
+              value={activeNote.content}
+              onChange={handleNoteChange}
+              placeholder="Type your notes here..."
+              autoFocus
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Calendar Modal with events */}
+      {showCalendar && (
+        <div className="calendar-modal">
+          <div className="calendar-content">
+            <div className="calendar-header">
+              <span>📅 Calendar</span>
+              <button className="calendar-close" onClick={handleCalendarClose}>×</button>
+            </div>
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={handleDateChange}
+              className="calendar-input"
+            />
+            {selectedDate && (
+              <>
+                <div className="calendar-selected">
+                  Events for: {selectedDate}
+                </div>
+                <ul className="calendar-events-list">
+                  {(calendarEvents[selectedDate] || []).map((event, idx) => (
+                    <li key={idx}>
+                      {event}
+                      <button className="calendar-event-delete" onClick={() => handleDeleteEvent(selectedDate, idx)}>×</button>
+                    </li>
+                  ))}
+                </ul>
+                <div className="calendar-event-input-row">
+                  <input
+                    type="text"
+                    value={eventInput}
+                    onChange={handleEventInput}
+                    placeholder="Add event..."
+                    className="calendar-event-input"
+                    onKeyDown={e => { if (e.key === "Enter") handleAddEvent(); }}
+                  />
+                  <button className="calendar-event-add" onClick={handleAddEvent}>Add</button>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

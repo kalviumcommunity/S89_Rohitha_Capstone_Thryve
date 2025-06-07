@@ -9,6 +9,7 @@ import DiyPage from "./DiyPage";
 import AiPage from "./AiPage";
 import StudyPage from "./StudyPage";
 import VideoGallery from './VideoGallery';
+import ProfilePage from './ProfilePage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/ai" element={<AiPage />} />
         <Route path="/study" element={<StudyPage />} />
         <Route path="/videos" element={<VideoGallery />} />
+        <Route path="/profile" element={<ProfilePage />} />
         
         {/* Add more routes as needed */}
       </Routes>

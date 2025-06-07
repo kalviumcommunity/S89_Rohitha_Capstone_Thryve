@@ -43,6 +43,7 @@ userRouter.post("/signup", async (req, res) => {
       message: "User registered successfully",
       token,
       name: newUser.name,
+      email: newUser.email,
       id: newUser.id,
     });
   } catch (error) {
@@ -84,6 +85,7 @@ userRouter.post("/login", async (req, res) => {
       message: "User logged in successfully",
       token,
       name: user.name,
+      email: user.email,
       id: user.id,
     });
   } catch (error) {

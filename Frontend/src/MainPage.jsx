@@ -190,7 +190,7 @@ function MainPage() {
           <input type="text" placeholder="Search" className="search-box" />
           <span className="icon" style={{ cursor: "pointer" }} onClick={handleNotesOpen}>📋</span>
           <span className="icon" style={{ cursor: "pointer" }} onClick={handleCalendarOpen}>📅</span>
-          <span className="icon">👤</span>
+          <span className="icon" style={{ cursor: "pointer" }} onClick={() => navigate('/profile')}>👤</span>
         </div>
       </header>
 

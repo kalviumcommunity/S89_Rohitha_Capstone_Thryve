@@ -36,10 +36,10 @@ function FitnessPage() {
           <div className="fitness-card fitness-planks" onClick={() => window.open("https://youtu.be/pSHjTRCQxIw", "_self")}><span>Abdomens and planks</span></div>
           <div className="fitness-card fitness-crunches" onClick={() => window.open("https://youtu.be/Xyd_fa5zoEU", "_self")}><span>5 min crunches</span></div>
           <div className="fitness-card fitness-exercise" onClick={() => window.open("https://youtu.be/2pLT-olgUJs", "_self")}><span>Hand and Leg exercises</span></div>
-          <div className="fitness-card fitness-planks" onClick={() => window.open("https://youtu.be/pSHjTRCQxIw", "_self")}><span>Abdomens and planks</span></div>
-          <div className="fitness-card fitness-crunches" onClick={() => window.open("https://youtu.be/Xyd_fa5zoEU", "_self")}><span>5 min crunches</span></div>
-          <div className="fitness-card fitness-exercise" onClick={() => window.open("https://youtu.be/2pLT-olgUJs", "_self")}><span>Hand and Leg exercises</span></div>
-          <div className="fitness-card fitness-exercise" onClick={() => window.open("https://youtu.be/2pLT-olgUJs", "_self")}><span>Hand and Leg exercises</span></div>
+          <div className="fitness-card fitness-drills" onClick={() => window.open("https://youtu.be/pSHjTRCQxIw", "_self")}><span>Coordination Drills</span></div>
+          <div className="fitness-card fitness-lunges" onClick={() => window.open("https://youtu.be/Xyd_fa5zoEU", "_self")}><span>Lunges</span></div>
+          <div className="fitness-card fitness-zumba" onClick={() => window.open("https://youtu.be/2pLT-olgUJs", "_self")}><span>Zumba</span></div>
+          <div className="fitness-card fitness-cardio" onClick={() => window.open("https://youtu.be/2pLT-olgUJs", "_self")}><span>Cardio</span></div>
         </div>
       </div>
 

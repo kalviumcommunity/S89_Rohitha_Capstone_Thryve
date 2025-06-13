@@ -31,30 +31,38 @@ function RecipePage() {
       <div className="recipe-section">
         <h3>5 min Recipes</h3>
         <div className="recipe-card-container">
+          
           <div className="recipe-card brownies" onClick={()=>{
             window.open("https://youtu.be/lIb_741_dIw","_self")
           }}> <span>Choco Fudge Brownies</span></div>
+          
           <div className="recipe-card pasta" onClick={()=>{
             window.open("https://youtu.be/zSCTYKUeLQg","_self")
           }}> <span>Red sauce penne pasta</span></div>
+          
           <div className="recipe-card soup" onClick={()=>{
             window.open("https://youtu.be/szjZ3vqwyXE","_self")
           }}> <span>Tomatoe Basil Soup</span></div>
+          
           <div className="recipe-card white" onClick={()=>{
             window.open("https://youtu.be/Mb_rmBxJ9Cc","_self")
           }} ><span>White sauce pasta</span></div>
+          
           <div className="recipe-card manchuria" onClick={()=>{
             window.open("https://youtu.be/iuc0qT8kSJo","_self")
           }} ><span>Manchuria</span></div>
-          <div className="recipe-card soup" onClick={()=>{
-            window.open("https://youtu.be/szjZ3vqwyXE","_self")
-          }}> <span>Tomatoe Basil Soup</span></div>
-          <div className="recipe-card white" onClick={()=>{
-            window.open("https://youtu.be/Mb_rmBxJ9Cc","_self")
-          }} ><span>White sauce pasta</span></div>
-          <div className="recipe-card manchuria" onClick={()=>{
-            window.open("https://youtu.be/iuc0qT8kSJo","_self")
-          }} ><span>Manchuria</span></div>
+          
+          <div className="recipe-card pizza" onClick={()=>{
+            window.open("https://youtu.be/ApuvOGAEp4c","_self")
+          }}> <span>Mini Pizza</span></div>
+          
+          <div className="recipe-card noodles" onClick={()=>{
+            window.open("https://youtu.be/-SMX9N-8pBE","_self")
+          }} ><span>Ramen Noodles</span></div>
+          
+          <div className="recipe-card smoothie" onClick={()=>{
+            window.open("https://www.youtube.com/shorts/AKnoXvFwReA?feature=share","_self")
+          }} ><span>Banana Smoothie</span></div>
         </div>
       </div>
 
@@ -62,30 +70,38 @@ function RecipePage() {
       <div className="recipe-section">
         <h3>Healthy Recipies</h3>
         <div className="recipe-card-container">
+          
           <div className="recipe-card sandwich" onClick={()=>{
             window.open("https://youtu.be/BlzJzavriHw","_self")
           }}> <span>Brown bread Sandwhich</span></div>
+          
           <div className="recipe-card tacos" onClick={()=>{
             window.open("https://youtu.be/X8-Q-JHHSFw","_self")
           }}> <span>Veggies stuffed Tacos</span></div>
+          
           <div className="recipe-card rolls" onClick={()=>{
             window.open("https://youtu.be/7DuHn0kx0Ps","_self")
           }}> <span>Salad stuffed Rolls</span></div>
+          
           <div className="recipe-card rice" onClick={()=>{
             window.open("https://www.youtube.com/shorts/6NDB035TTFw?feature=share","_self")
           }}> <span>Fried Rice</span></div>
+          
           <div className="recipe-card curry" onClick={()=>{
             window.open("https://youtu.be/nhs0deABmLM","_self")
           }}> <span>Potatoe curry</span></div>
-          <div className="recipe-card rolls" onClick={()=>{
-            window.open("https://youtu.be/7DuHn0kx0Ps","_self")
-          }}> <span>Salad stuffed Rolls</span></div>
-          <div className="recipe-card rice" onClick={()=>{
-            window.open("https://www.youtube.com/shorts/6NDB035TTFw?feature=share","_self")
-          }}> <span>Fried Rice</span></div>
-          <div className="recipe-card curry" onClick={()=>{
-            window.open("https://youtu.be/nhs0deABmLM","_self")
-          }}> <span>Potatoe curry</span></div>
+          
+          <div className="recipe-card oats" onClick={()=>{
+            window.open("https://www.youtube.com/shorts/HA2yxlVEOso?feature=share","_self")
+          }}> <span>Oats</span></div>
+          
+          <div className="recipe-card omelete" onClick={()=>{
+            window.open("https://youtu.be/musZ31HURws","_self")
+          }}> <span>Veggie Omelete</span></div>
+          
+          <div className="recipe-card green" onClick={()=>{
+            window.open("https://youtu.be/WaaQyqDGR5k","_self")
+          }}> <span>Green Smoothie</span></div>
         </div>
       </div>
 

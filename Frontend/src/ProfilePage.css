@@ -1,0 +1,91 @@
+.profile-container {
+  max-width: 400px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 32px;
+  text-align: center;
+}
+
+.profile-info {
+  margin: 24px 0;
+  font-size: 18px;
+}
+
+.profile-photo-wrapper {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2d8cff;
+  background: #eee;
+  transition: box-shadow 0.2s;
+}
+
+.profile-photo-editable {
+  cursor: pointer;
+  box-shadow: 0 0 0 2px #2d8cff55;
+}
+
+.profile-input {
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  margin-left: 4px;
+}
+
+.profile-placeholder {
+  color: #888;
+}
+
+.profile-message {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.profile-btn-row {
+  margin-bottom: 10px;
+}
+
+.profile-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 5px 10px 0;
+  transition: background 0.2s;
+}
+
+.profile-btn-edit,
+.profile-btn-save {
+  background: #2d8cff;
+  color: #fff;
+}
+
+.profile-btn-cancel {
+  background: #888;
+  color: #fff;
+}
+
+.profile-btn-logout {
+  background: #e74c3c;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.profile-btn:hover {
+  opacity: 0.9;
+}
+
+.profile-not-logged-in {
+  padding: 40px;
+  text-align: center;
+}

@@ -29,21 +29,41 @@ function StudyPage() {
 
         <h3 className="section-heading">Summaries of topics</h3>
         <div className="card-container">
+          
           <div className="card design" onClick={()=>{
             window.open("https://youtu.be/GQS7wPujL2k","_self")
           }}><span>Designing for begginers</span></div>
+          
           <div className="card accounts" onClick={()=>{
             window.open("https://youtu.be/yYX4bvQSqbo","_self")
           }}><span>Accounts for students</span></div>
+          
           <div className="card coding" onClick={()=>{
             window.open("https://youtu.be/eKqY-oP1d_Y","_self")
           }}><span>Coding for begginers</span></div>
+          
           <div className="card editing" onClick={()=>{
             window.open("https://youtu.be/y7Ci_H9bYEk","_self")
           }}><span>Editing for youtubers</span></div>
+          
           <div className="card templates" onClick={()=>{
             window.open("https://youtu.be/r7hULM1qRf4","_self")
           }}><span>Templates for videos</span></div>
+
+          <div className="card enter" onClick={()=>{
+            window.open("https://youtu.be/eHJnEHyyN1Y","_self")
+          }}><span>Entrepreneurship</span></div>
+          
+          <div className="card bio" onClick={()=>{
+            window.open("https://youtu.be/BjzH4Hr_wGg","_self")
+          }}><span>Biochemistry</span></div>
+          
+          <div className="card python" onClick={()=>{
+            window.open("https://youtu.be/QXeEoD0pB3E","_self")
+          }}><span>Python for beginners</span></div>
+
+          
+
         </div>
 
         

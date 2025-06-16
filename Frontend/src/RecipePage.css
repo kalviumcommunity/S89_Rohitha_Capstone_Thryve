@@ -150,6 +150,30 @@
   background-image: url('https://i.pinimg.com/736x/29/ac/b4/29acb49173c63030c814fe6808a75a09.jpg');
 }
 
+.pizza{
+  background-image: url('https://i.pinimg.com/736x/db/ce/ea/dbceea7db5da2babe818847ed6e0608c.jpg');
+}
+
+.noodles {
+  background-image: url('https://i.pinimg.com/736x/d6/8a/be/d68abeeccb103fdff55b6f662650a63c.jpg');
+}
+
+.smoothie {
+  background-image: url('https://i.pinimg.com/736x/d3/67/b3/d367b3e37219433a9c92de2c3d1c08ef.jpg');
+}
+
+.oats {
+  background-image: url('https://i.pinimg.com/736x/6b/7a/25/6b7a25e6735c6f57df0ebce27167b3f9.jpg');
+}
+
+.omelete {
+  background-image: url('https://i.pinimg.com/736x/c2/89/73/c28973adaf8c4a6a8e0a6a63e827708c.jpg');
+}
+
+.green {
+  background-image: url('https://i.pinimg.com/736x/46/d8/15/46d815be729c637ceaf9be14d1f80a04.jpg');
+}
+
 .recipe-footer {
   display: flex;
   justify-content: space-between;

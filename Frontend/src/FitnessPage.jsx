@@ -36,10 +36,10 @@ function FitnessPage() {
           <div className="fitness-card fitness-planks" onClick={() => window.open("https://youtu.be/pSHjTRCQxIw", "_self")}><span>Abdomens and planks</span></div>
           <div className="fitness-card fitness-crunches" onClick={() => window.open("https://youtu.be/Xyd_fa5zoEU", "_self")}><span>5 min crunches</span></div>
           <div className="fitness-card fitness-exercise" onClick={() => window.open("https://youtu.be/2pLT-olgUJs", "_self")}><span>Hand and Leg exercises</span></div>
-          <div className="fitness-card fitness-drills" onClick={() => window.open("https://youtu.be/pSHjTRCQxIw", "_self")}><span>Coordination Drills</span></div>
-          <div className="fitness-card fitness-lunges" onClick={() => window.open("https://youtu.be/Xyd_fa5zoEU", "_self")}><span>Lunges</span></div>
-          <div className="fitness-card fitness-zumba" onClick={() => window.open("https://youtu.be/2pLT-olgUJs", "_self")}><span>Zumba</span></div>
-          <div className="fitness-card fitness-cardio" onClick={() => window.open("https://youtu.be/2pLT-olgUJs", "_self")}><span>Cardio</span></div>
+          <div className="fitness-card fitness-drills" onClick={() => window.open("https://youtu.be/o7SUtgpPoYw", "_self")}><span>Coordination Drills</span></div>
+          <div className="fitness-card fitness-lunges" onClick={() => window.open("https://youtu.be/p-R0HSfL6nw", "_self")}><span>Lunges</span></div>
+          <div className="fitness-card fitness-zumba" onClick={() => window.open("https://youtu.be/KJHkudnpHds", "_self")}><span>Zumba</span></div>
+          <div className="fitness-card fitness-cardio" onClick={() => window.open("https://youtu.be/_fesO5oNcEs", "_self")}><span>Cardio</span></div>
         </div>
       </div>
 
@@ -55,10 +55,10 @@ function FitnessPage() {
           <div className="fitness-card fitness-yoga" onClick={() => window.open("https://youtu.be/EvMTrP8eRvM", "_self")}><span>Simple yoga at home</span></div>
           <div className="fitness-card fitness-asanas" onClick={() => window.open("https://youtu.be/LYxxH1hFj9E", "_self")}><span>Asanas at home</span></div>
           <div className="fitness-card fitness-pranayamam" onClick={() => window.open("https://youtu.be/I77hh5I69gA", "_self")}><span>Pranayamam</span></div>
-          <div className="fitness-card fitness-yoga" onClick={() => window.open("https://youtu.be/EvMTrP8eRvM", "_self")}><span>Simple yoga at home</span></div>
-          <div className="fitness-card fitness-asanas" onClick={() => window.open("https://youtu.be/LYxxH1hFj9E", "_self")}><span>Asanas at home</span></div>
-          <div className="fitness-card fitness-pranayamam" onClick={() => window.open("https://youtu.be/I77hh5I69gA", "_self")}><span>Pranayamam</span></div>
-          <div className="fitness-card fitness-pranayamam" onClick={() => window.open("https://youtu.be/I77hh5I69gA", "_self")}><span>Pranayamam</span></div>
+          <div className="fitness-card fitness-anxiety" onClick={() => window.open("https://youtu.be/mKW4ZFP8bGY", "_self")}><span>Controll your anxiety</span></div>
+          <div className="fitness-card fitness-music" onClick={() => window.open("https://youtu.be/cF-w7jzVWcM", "_self")}><span>10min music for meditation</span></div>
+          <div className="fitness-card fitness-surya" onClick={() => window.open("https://youtu.be/aJb1AWMc-64", "_self")}><span>SuryaNamaskaram at home</span></div>
+          <div className="fitness-card fitness-about" onClick={() => window.open("https://youtu.be/Pzaai8azbqA", "_self")}><span>About Yoga and roots</span></div>
         </div>
       </div>
 

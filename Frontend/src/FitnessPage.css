@@ -152,6 +152,21 @@
   background-image: url('https://i.pinimg.com/736x/5f/03/2a/5f032a692f6392ef15fcd22c018c9e34.jpg');
 }
 
+.fitness-drills {
+  background-image: url('https://i.pinimg.com/736x/b6/d2/96/b6d296ae9f6a6ea43cd9b1451d28408d.jpg');
+}
+
+.fitness-lunges {
+  background-image: url('https://i.pinimg.com/736x/64/bd/40/64bd40875c2cc1feb9791ef6f05b3dd2.jpg');
+}
+
+.fitness-zumba {
+  background-image: url('https://i.pinimg.com/736x/aa/59/e2/aa59e25b035f095faa77e1ee7b3646cc.jpg');
+}
+
+.fitness-cardio {
+  background-image: url('https://i.pinimg.com/736x/aa/9d/f0/aa9df0e5f4abb05dee262c08356b64d1.jpg');
+}
 .fitness-footer {
   display: flex;
   justify-content: space-between;

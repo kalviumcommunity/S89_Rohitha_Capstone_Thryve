@@ -8,7 +8,7 @@ const userRouter = express.Router();
 // Signup Route
 userRouter.post("/signup", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name,username, email, password } = req.body;
 
     // Validate input
     if (!name || !email || !password) {
@@ -28,13 +28,14 @@ userRouter.post("/signup", async (req, res) => {
     // Create new user
     const newUser = await userSchema.create({
       name,
+      username,
       email,
       password: hashedPassword,
     });
 
     // Generate JWT token
     const token = jwt.sign(
-      { name: newUser.name, email: newUser.email, id: newUser.id },
+      { name: newUser.name, username: newUser.username, email: newUser.email, id: newUser.id },
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
@@ -43,6 +44,7 @@ userRouter.post("/signup", async (req, res) => {
       message: "User registered successfully",
       token,
       name: newUser.name,
+      username: newUser.username,
       email: newUser.email,
       id: newUser.id,
     });
@@ -76,7 +78,7 @@ userRouter.post("/login", async (req, res) => {
 
     // Generate JWT token
     const token = jwt.sign(
-      { name: user.name, email: user.email, id: user.id },
+      { name: user.name, username: user.username, email: user.email, id: user.id },
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
     );
@@ -85,12 +87,33 @@ userRouter.post("/login", async (req, res) => {
       message: "User logged in successfully",
       token,
       name: user.name,
+      username: user.username,
       email: user.email,
       id: user.id,
     });
   } catch (error) {
     console.error("Login Error:", error);
     return res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+userRouter.put('/profile', async (req, res) => {
+  try {
+    const { email, name, username, profilePhoto } = req.body; 
+    const user = await userSchema.findOneAndUpdate(
+      { email },
+      { name, username, profilePhoto }, 
+      { new: true }
+    );
+    if (!user) return res.status(404).json({ message: 'User not found' });
+    res.json({
+      name: user.name,
+      username: user.username,
+      email: user.email,
+      profilePhoto: user.profilePhoto, 
+    });
+  } catch (err) {
+    res.status(500).json({ message: 'Error updating profile' });
   }
 });
 

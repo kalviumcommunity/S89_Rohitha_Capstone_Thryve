@@ -1,6 +1,5 @@
 .main-page {
- 
-  background-image: url('https://i.pinimg.com/736x/f9/f4/a4/f9f4a4631393f2e63d23c0a968ad65f0.jpg'); /* Replace with your actual background */
+  background-image: url('https://i.pinimg.com/736x/f9/f4/a4/f9f4a4631393f2e63d23c0a968ad65f0.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,7 +9,6 @@
 
 .main-page .background-overlay {
   background-color: rgba(233, 229, 229, 0.502);
-  /* Removed padding-bottom to eliminate extra whitespace */
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -159,7 +157,7 @@ footer {
   background-color: rgba(255, 255, 255, 0.9);
   color: black;
   padding: 32px 60px;
-  margin-top: 0; /* Changed from 32px to 0 to remove extra space */
+  margin-top: 0;
   width: 100%;
 }
 
@@ -245,7 +243,7 @@ footer {
 /* Floating Add Button */
 .floating-add-btn {
   position: fixed;
-  bottom: 100px; /* Adjust so it's above the footer */
+  bottom: 100px;
   right: 40px;
   width: 56px;
   height: 56px;
@@ -264,197 +262,3 @@ footer {
   color: #fff;
 }
 
-.notes-modal {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-}
-.notes-content {
-  background: #fff;
-  border-radius: 12px;
-  padding: 24px 20px 16px 20px;
-  min-width: 320px;
-  min-height: 220px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  position: relative;
-}
-.notes-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 6px;
-}
-.notes-close {
-  background: none;
-  border: none;
-  font-size: 1.5em;
-  cursor: pointer;
-  color: #333;
-}
-.notes-content textarea {
-  width: 100%;
-  min-height: 120px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  font-size: 1em;
-  resize: vertical;
-  outline: none;
-}
-
-.notes-tabs {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-.notes-tab {
-  background: #f3f3f3;
-  border-radius: 6px;
-  padding: 4px 12px;
-  cursor: pointer;
-  font-size: 1em;
-  margin-right: 2px;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-.notes-tab.active {
-  background: black;
-  color: #fff;
-  font-weight: bold;
-}
-.notes-add {
-  background: black;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  font-size: 1.2em;
-  cursor: pointer;
-  margin-left: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.notes-delete {
-  color: #888;
-  margin-left: 6px;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.notes-delete:hover {
-  color: #e74c3c;
-}
-
-.calendar-modal {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
-}
-.calendar-content {
-  background: #fff;
-  border-radius: 12px;
-  padding: 24px 20px 16px 20px;
-  min-width: 320px;
-  min-height: 120px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  position: relative;
-  align-items: center;
-}
-.calendar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-  font-size: 1.2em;
-  width: 100%;
-}
-.calendar-close {
-  background: none;
-  border: none;
-  font-size: 1.5em;
-  cursor: pointer;
-  color: #333;
-}
-.calendar-input {
-  font-size: 1.1em;
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-.calendar-selected {
-  margin-top: 10px;
-  font-size: 1em;
-  color: #2d8cff;
-}
-
-.calendar-events-list {
-  list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
-  width: 100%;
-}
-.calendar-events-list li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #f3f3f3;
-  border-radius: 6px;
-  padding: 6px 12px;
-  margin-bottom: 6px;
-  font-size: 1em;
-}
-.calendar-event-delete {
-  background: none;
-  border: none;
-  color: #e74c3c;
-  font-size: 1.2em;
-  cursor: pointer;
-  margin-left: 10px;
-}
-.calendar-event-input-row {
-  display: flex;
-  gap: 8px;
-  margin-top: 10px;
-  width: 100%;
-}
-.calendar-event-input {
-  flex: 1;
-  padding: 7px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1em;
-}
-.calendar-event-add {
-  background: #2d8cff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 7px 16px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.calendar-event-add:hover {
-  background: #1a5fb4;
-}

@@ -1,0 +1,167 @@
+.videogallery-container {
+  padding: 2.2rem 1rem 2rem 1rem;
+  max-width: 1100px;
+  margin: 3.5rem auto 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+.videogallery-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #262626;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.videogallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem 2rem;
+  justify-items: center;
+}
+
+.videogallery-card {
+  background: #fafbfc;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(38,38,38,0.09);
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1.5px solid #ececec;
+}
+
+.videogallery-card:hover {
+  box-shadow: 0 8px 28px rgba(45,140,255,0.13);
+  transform: translateY(-4px) scale(1.015);
+}
+
+.videogallery-video {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  width: 100%;
+  max-width: 290px;
+  background: #000;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.videogallery-filename {
+  margin-top: 12px;
+  word-break: break-all;
+  max-width: 280px;
+  font-size: 1.02rem;
+  color: #262626;
+  text-align: center;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-weight: 500;
+}
+
+.videogallery-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Only Edit button is blue */
+.videogallery-actions .edit-btn {
+  background: #0095f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.18s, color 0.18s;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  letter-spacing: 0.01em;
+}
+.videogallery-actions .edit-btn:hover {
+  background: #1877f2;
+}
+
+/* Delete button is red/white */
+.videogallery-actions .delete-btn {
+  background: #fff;
+  color: #ed4956;
+  border: 1.5px solid #ed4956;
+  border-radius: 7px;
+  padding: 6px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.18s, color 0.18s;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+.videogallery-actions .delete-btn:hover {
+  background: #ed4956;
+  color: #fff;
+}
+
+/* Heart button (like) has no background */
+.like-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.1s;
+  outline: none;
+  color: #bbb;
+  padding: 0 6px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+}
+.like-btn.liked {
+  color: #ed4956;
+  transform: scale(1.12);
+}
+.like-btn:active {
+  transform: scale(0.95);
+}
+
+.videogallery-edit-row {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.videogallery-edit-row input[type="text"] {
+  padding: 7px 12px;
+  border-radius: 7px;
+  border: 1.2px solid #ccc;
+  font-size: 1rem;
+  width: 140px;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.videogallery-edit-row button {
+  padding: 7px 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .videogallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .videogallery-card {
+    max-width: 98vw;
+    padding: 1rem 0.5rem 1.2rem 0.5rem;
+  }
+  .videogallery-video,
+  .videogallery-filename {
+    max-width: 95vw;
+  }
+}

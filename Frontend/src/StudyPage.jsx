@@ -14,7 +14,7 @@ function StudyPage() {
           <li><Link to="/fitness">Fitness</Link></li>
           <li><Link to="/diy">DIY</Link></li>
           <li><Link to="/ai">AI</Link></li>
-          <li><Link to="/videos">Videos</Link></li>
+          
           <li className="active">Study</li>
         </ul>
         <div className="search-bar">

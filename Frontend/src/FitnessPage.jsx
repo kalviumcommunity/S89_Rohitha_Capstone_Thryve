@@ -16,7 +16,7 @@ function FitnessPage() {
           <li><Link to="/diy">DIY</Link></li>
           <li><Link to="/ai">AI</Link></li>
           <li><Link to="/study">Study</Link></li>
-          <li><Link to="/videos">Videos</Link></li>
+          
         </ul>
         <div className="fitness-search-bar">
           <input type="text" placeholder="Search" />

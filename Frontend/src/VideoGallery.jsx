@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import './VideoGallery.css';
 
 function VideoGallery() {
   const [videos, setVideos] = useState([]);
-  const [editing, setEditing] = useState(null); // filename being edited
+  const [editing, setEditing] = useState(null);
   const [newName, setNewName] = useState('');
+  const [likes, setLikes] = useState({}); // { filename: true/false }
 
   // Fetch videos
   const fetchVideos = () => {
@@ -15,6 +17,14 @@ function VideoGallery() {
   useEffect(() => {
     fetchVideos();
   }, []);
+
+  // Like/unlike handler
+  const toggleLike = (filename) => {
+    setLikes(prev => ({
+      ...prev,
+      [filename]: !prev[filename]
+    }));
+  };
 
   // Delete handler
   const handleDelete = async (filename) => {
@@ -35,7 +45,6 @@ function VideoGallery() {
       alert('Please enter a new name.');
       return;
     }
-    // Ensure extension stays the same
     const ext = filename.substring(filename.lastIndexOf('.'));
     let safeName = newName.trim();
     if (!safeName.endsWith(ext)) safeName += ext;
@@ -55,35 +64,40 @@ function VideoGallery() {
   };
 
   return (
-    <div style={{ padding: '2rem' }}>
-      <h2>Uploaded Videos</h2>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
+    <div className="videogallery-container">
+      <h2 className="videogallery-title">Uploaded Videos</h2>
+      <div className="videogallery-grid">
         {videos.length === 0 && <p>No videos uploaded yet.</p>}
         {videos.map((filename) => (
-          <div key={filename} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div key={filename} className="videogallery-card">
             <video
               src={`http://localhost:8080/uploads/${filename}`}
               controls
-              width={320}
-              style={{ borderRadius: '10px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}
+              className="videogallery-video"
             />
-            <div style={{ marginTop: 8, wordBreak: 'break-all', maxWidth: 320 }}>{filename}</div>
+            <div className="videogallery-filename">{filename}</div>
             {editing === filename ? (
-              <div style={{ marginTop: 8 }}>
+              <div className="videogallery-edit-row">
                 <input
                   type="text"
                   value={newName}
                   onChange={e => setNewName(e.target.value)}
                   placeholder="New file name"
-                  style={{ width: 180 }}
                 />
-                <button onClick={() => handleEdit(filename)} style={{ marginLeft: 4 }}>Save</button>
-                <button onClick={() => { setEditing(null); setNewName(''); }} style={{ marginLeft: 4 }}>Cancel</button>
+                <button onClick={() => handleEdit(filename)}>Save</button>
+                <button onClick={() => { setEditing(null); setNewName(''); }}>Cancel</button>
               </div>
             ) : (
-              <div style={{ marginTop: 8 }}>
-                <button onClick={() => { setEditing(filename); setNewName(filename.replace(/\.[^/.]+$/, "")); }}>Edit</button>
-                <button onClick={() => handleDelete(filename)} style={{ marginLeft: 8, color: 'red' }}>Delete</button>
+              <div className="videogallery-actions">
+                <button className="edit-btn" onClick={() => { setEditing(filename); setNewName(filename.replace(/\.[^/.]+$/, "")); }}>Edit</button>
+                <button className="delete-btn" onClick={() => handleDelete(filename)}>Delete</button>
+                <button
+                  className={`like-btn${likes[filename] ? ' liked' : ''}`}
+                  onClick={() => toggleLike(filename)}
+                  aria-label={likes[filename] ? "Unlike" : "Like"}
+                >
+                  {likes[filename] ? '❤️' : '🤍'}
+                </button>
               </div>
             )}
           </div>

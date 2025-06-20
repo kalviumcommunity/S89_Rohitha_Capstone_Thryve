@@ -15,7 +15,7 @@ function DiyPage() {
           <li className="diy-active">DIY</li>
           <li><Link to="/ai">AI</Link></li>
           <li><Link to="/study">Study</Link></li>
-          <li><Link to="/videos">Videos</Link></li>
+          
         </ul>
         <div className="diy-search-bar">
           <input type="text" placeholder="Search" />

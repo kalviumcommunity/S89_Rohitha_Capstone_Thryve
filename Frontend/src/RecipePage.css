@@ -1,10 +1,29 @@
 .recipe-container {
-  background-image: url('');
+  
   background-size: cover;
   background-position: center;
   color: black;
   font-family: 'Segoe UI', sans-serif;
   min-height: 100vh;
+  position: relative;
+  /* ...existing styles... */
+  z-index: 0;
+ 
+}
+
+.recipe-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://i.pinimg.com/736x/83/af/4d/83af4db9c1fe51bc5b593488b65f4d01.jpg') center/cover no-repeat;
+  opacity: 0.45; /* Adjust opacity as needed */
+  z-index: 0;
+  pointer-events: none;
+}
+
+.recipe-container > * {
+  position: relative;
+  z-index: 1;
 }
 
 .recipe-navbar {

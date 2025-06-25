@@ -143,6 +143,19 @@
   background-image: url('https://i.pinimg.com/736x/d4/b8/84/d4b884e7e168c8671ba07959496f3f86.jpg');
 }
 
+.diy-candles {
+  background-image: url('https://i.pinimg.com/736x/0c/c0/bc/0cc0bc9da15369c151d7a701c9a78e49.jpg');
+}
+
+.diy-lipbalm {
+  background-image: url('https://i.pinimg.com/736x/cd/86/98/cd8698f97865ee9a99b92e405dc6434a.jpg');
+}
+
+.diy-laterns {
+  background-image: url('https://i.pinimg.com/736x/90/7c/ca/907cca68cbf565a63c75cd0aa56aadf0.jpg');
+}
+
+
 /* Footer always at the bottom */
 .diy-footer {
   display: flex;

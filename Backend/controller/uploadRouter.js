@@ -2,6 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const Video = require('../models/videoSchema');
 
 const uploadRouter = express.Router();
 
@@ -20,42 +21,58 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 
-// Upload endpoint
-uploadRouter.post('/upload', upload.single('video'), (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ message: 'No file uploaded.' });
+// Upload endpoint (now saves uploaderEmail)
+uploadRouter.post('/upload', upload.single('video'), async (req, res) => {
+  try {
+    const { uploaderEmail } = req.body;
+    if (!req.file || !uploaderEmail) {
+      return res.status(400).json({ message: 'No file or uploader email provided.' });
+    }
+    await Video.create({
+      filename: req.file.filename,
+      uploaderEmail
+    });
+    res.json({ message: 'Video uploaded successfully!', filename: req.file.filename });
+  } catch (err) {
+    res.status(500).json({ message: 'Upload failed.' });
   }
-  res.json({ message: 'Video uploaded successfully!', filename: req.file.filename });
 });
 
-// List all uploaded videos
-uploadRouter.get('/videos', (req, res) => {
-  fs.readdir(uploadDir, (err, files) => {
-    if (err) {
-      return res.status(500).json({ message: 'Error reading uploads.' });
+// List videos for a specific user
+uploadRouter.get('/videos', async (req, res) => {
+  try {
+    const { uploaderEmail } = req.query;
+    if (!uploaderEmail) {
+      return res.status(400).json({ message: 'Missing uploaderEmail in query.' });
     }
-    // Only return video files (basic filter)
-    const videoFiles = files.filter(file =>
-      file.endsWith('.mp4') || file.endsWith('.mov') || file.endsWith('.webm') || file.endsWith('.avi') || file.endsWith('.mkv')
-    );
-    res.json({ videos: videoFiles });
-  });
+    const videos = await Video.find({ uploaderEmail });
+    res.json({ videos: videos.map(v => v.filename) });
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching videos.' });
+  }
 });
 
 // DELETE /recipes/videos/:filename
-uploadRouter.delete('/videos/:filename', (req, res) => {
+uploadRouter.delete('/videos/:filename', async (req, res) => {
   const filename = req.params.filename;
   const filePath = path.join(uploadDir, filename);
-  fs.unlink(filePath, (err) => {
-    if (err) {
-      return res.status(500).json({ message: 'Failed to delete video.' });
-    }
-    res.json({ message: 'Video deleted successfully.' });
-  });
+  try {
+    // Remove from DB
+    await Video.deleteOne({ filename });
+    // Remove file from disk
+    fs.unlink(filePath, (err) => {
+      if (err) {
+        return res.status(500).json({ message: 'Failed to delete video file.' });
+      }
+      res.json({ message: 'Video deleted successfully.' });
+    });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to delete video.' });
+  }
 });
 
-// (Optional) Edit/Rename endpoint
-uploadRouter.put('/videos/:filename', (req, res) => {
+// Edit/Rename endpoint
+uploadRouter.put('/videos/:filename', async (req, res) => {
   const oldName = req.params.filename;
   const newName = req.body.newName;
   if (!newName) return res.status(400).json({ message: 'New name required.' });
@@ -63,12 +80,15 @@ uploadRouter.put('/videos/:filename', (req, res) => {
   const oldPath = path.join(uploadDir, oldName);
   const newPath = path.join(uploadDir, newName);
 
-  fs.rename(oldPath, newPath, (err) => {
-    if (err) {
-      return res.status(500).json({ message: 'Failed to rename video.' });
-    }
+  try {
+    // Rename file on disk
+    fs.renameSync(oldPath, newPath);
+    // Update DB
+    await Video.findOneAndUpdate({ filename: oldName }, { filename: newName });
     res.json({ message: 'Video renamed successfully.' });
-  });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to rename video.' });
+  }
 });
 
 module.exports = uploadRouter;

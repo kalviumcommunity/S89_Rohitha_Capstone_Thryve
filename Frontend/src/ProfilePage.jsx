@@ -28,18 +28,30 @@ function ProfilePage() {
     reader.readAsDataURL(file);
   };
 
-  // Save to localStorage (no backend required)
-  const handleSave = () => {
-    const updatedUser = {
-      ...storedUser,
-      name,
-      username,
-      email,
-      profilePhoto,
-    };
-    localStorage.setItem('user', JSON.stringify(updatedUser));
-    setMessage('Profile updated!');
-    setEditMode(false);
+  // Save to backend and localStorage
+  const handleSave = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/user/profile', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          name,
+          username,
+          profilePhoto,
+        }),
+      });
+      if (!response.ok) {
+        setMessage('Failed to update profile.');
+        return;
+      }
+      const updatedUser = await response.json();
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+      setMessage('Profile updated!');
+      setEditMode(false);
+    } catch (err) {
+      setMessage('Error updating profile.');
+    }
   };
 
   // Disable Save if nothing changed
@@ -130,23 +142,19 @@ function ProfilePage() {
           <button className="profile-btn profile-btn-logout" onClick={handleLogout}>Logout</button>
         </div>
       )}
-
-      {/* My Videos button */}
-      <div className="profile-extra-buttons"></div>
       <button
-  className="profile-btn profile-btn-follow"
-  onClick={() => navigate('/follow')}
->
-  Follow Others
-</button>
-
-
-<button
-  className="profile-btn profile-btn-uploaded"
-  onClick={() => navigate('/videos')}
->
-  My Videos
-</button>
+        className="profile-btn profile-btn-follow"
+        onClick={() => navigate('/follow')}
+      >
+        Follow Others
+      </button>
+      <div style={{ height: '32px' }} />
+      <button
+        className="profile-btn profile-btn-uploaded"
+        onClick={() => navigate('/videos')}
+      >
+        My Videos
+      </button>
     </div>
   );
 }

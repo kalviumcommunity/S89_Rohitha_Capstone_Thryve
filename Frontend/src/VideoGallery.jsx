@@ -6,16 +6,19 @@ function VideoGallery() {
   const [editing, setEditing] = useState(null);
   const [newName, setNewName] = useState('');
   const [likes, setLikes] = useState({}); // { filename: true/false }
+  const user = JSON.parse(localStorage.getItem('user'));
 
-  // Fetch videos
+  // Fetch videos for the logged-in user
   const fetchVideos = () => {
-    fetch('http://localhost:8080/recipes/videos')
+    if (!user?.email) return;
+    fetch(`http://localhost:8080/recipes/videos?uploaderEmail=${encodeURIComponent(user.email)}`)
       .then(res => res.json())
       .then(data => setVideos(data.videos || []));
   };
 
   useEffect(() => {
     fetchVideos();
+    // eslint-disable-next-line
   }, []);
 
   // Like/unlike handler

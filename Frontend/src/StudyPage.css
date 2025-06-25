@@ -130,6 +130,22 @@
   background-image: url('https://i.pinimg.com/736x/71/b7/77/71b7775c2ad707f7afc22757791de192.jpg');
 }
 
+.enter {
+  background-image: url('https://i.pinimg.com/736x/1e/51/e7/1e51e7c4673dc907cd436f42db8217aa.jpg');
+}
+
+.bio {
+  background-image: url('https://i.pinimg.com/736x/f7/3b/e7/f73be7893a118d2ccfeeb10737acc4e3.jpg');
+}
+
+.python {
+  background-image: url('https://i.pinimg.com/736x/89/cf/ef/89cfef04d8c1576791ab4997d530486a.jpg');
+}
+
+.templates {
+  background-image: url('https://i.pinimg.com/736x/71/b7/77/71b7775c2ad707f7afc22757791de192.jpg');
+}
+
 /* Footer always at the bottom */
 .footer {
   display: flex;

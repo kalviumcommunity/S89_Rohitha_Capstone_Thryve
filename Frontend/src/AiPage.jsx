@@ -1,13 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AiPage.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function AiPage() {
-  const [messages, setMessages] = useState([
-    { role: 'bot', content: 'Hi, what can I help you with?' }
-  ]);
+  // Load messages from localStorage or use default
+  const [messages, setMessages] = useState(() => {
+    const saved = localStorage.getItem('aiChatMessages');
+    return saved
+      ? JSON.parse(saved)
+      : [{ role: 'bot', content: 'Hi, what can I help you with?' }];
+  });
   const [input, setInput] = useState('');
+
+  const handleClearChat = () => {
+    setMessages([{ role: 'bot', content: 'Hi, what can I help you with?' }]);
+    localStorage.removeItem('aiChatMessages');
+  };
+
+  // Persist messages to localStorage on change
+  useEffect(() => {
+    localStorage.setItem('aiChatMessages', JSON.stringify(messages));
+  }, [messages]);
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -74,6 +88,7 @@ function AiPage() {
             onKeyDown={(e) => e.key === 'Enter' && handleSend()}
           />
           <span role="img" aria-label="send" onClick={handleSend} style={{ cursor: 'pointer' }}>⤴️</span>
+          <button className="clear-chat-btn" onClick={handleClearChat}>Clear Chat</button>
         </div>
       </div>
     </div>

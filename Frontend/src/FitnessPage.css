@@ -167,6 +167,26 @@
 .fitness-cardio {
   background-image: url('https://i.pinimg.com/736x/aa/9d/f0/aa9df0e5f4abb05dee262c08356b64d1.jpg');
 }
+
+.fitness-anxiety {
+ 
+  background-image: url('https://i.pinimg.com/736x/0b/e8/53/0be853cea97ab60bdbf248abe3f5a13c.jpg');
+}
+
+
+.fitness-music {
+  background-image: url('https://i.pinimg.com/736x/4c/00/d7/4c00d74eaa0f3de6aada329db34d37e2.jpg');
+}
+
+.fitness-surya {
+  background-image: url('https://i.pinimg.com/736x/76/e9/21/76e92156a8f1cded8b03e7b3f1dc9067.jpg');
+}
+
+.fitness-aboutyoga {
+  background-image: url('https://i.pinimg.com/736x/0a/10/bb/0a10bb446ec3fb0bc26c4338b4a33fd4.jpg');
+}
+
+
 .fitness-footer {
   display: flex;
   justify-content: space-between;

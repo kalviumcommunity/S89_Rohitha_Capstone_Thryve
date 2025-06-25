@@ -24,7 +24,9 @@ function LoginPage() {
         'user',
         JSON.stringify({
           name: response.data.name,   // Make sure this matches your backend response
+          username: response.data.username, // Make sure this matches your backend response
           email: response.data.email, // Make sure this matches your backend response
+          profilePhoto: response.data.profilePhoto || "", // Optional, if your backend returns a profile photo
         })
       );
       alert("Login successful!");

@@ -89,6 +89,7 @@ userRouter.post("/login", async (req, res) => {
       name: user.name,
       username: user.username,
       email: user.email,
+      profilePhoto: user.profilePhoto,
       id: user.id,
     });
   } catch (error) {
@@ -114,6 +115,17 @@ userRouter.put('/profile', async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ message: 'Error updating profile' });
+  }
+});
+
+// Get all users (except the current user)
+userRouter.get('/all', async (req, res) => {
+  try {
+    const { email } = req.query; // Pass current user's email as query param
+    const users = await userSchema.find(email ? { email: { $ne: email } } : {}, '-password');
+    res.json({ users });
+  } catch (err) {
+    res.status(500).json({ message: 'Error fetching users' });
   }
 });
 

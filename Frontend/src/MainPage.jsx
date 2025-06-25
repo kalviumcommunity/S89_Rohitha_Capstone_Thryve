@@ -70,27 +70,29 @@ function MainPage() {
 
   // Video upload handler
   const handleFileChange = async (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const formData = new FormData();
-      formData.append('video', file);
+  const file = e.target.files[0];
+  if (file) {
+    const user = JSON.parse(localStorage.getItem('user'));
+    const formData = new FormData();
+    formData.append('video', file);
+    formData.append('uploaderEmail', user.email); // <-- Add uploaderEmail
 
-      try {
-        const response = await fetch('http://localhost:8080/recipes/upload', {
-          method: 'POST',
-          body: formData,
-        });
-        if (response.ok) {
-          alert('Video uploaded successfully!');
-          navigate('/videos');
-        } else {
-          alert('Upload failed.');
-        }
-      } catch (err) {
-        alert('Error uploading video.');
+    try {
+      const response = await fetch('http://localhost:8080/recipes/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      if (response.ok) {
+        alert('Video uploaded successfully!');
+        navigate('/videos');
+      } else {
+        alert('Upload failed.');
       }
+    } catch (err) {
+      alert('Error uploading video.');
     }
-  };
+  }
+};
 
   // User-uploaded videos from backend
   const [userVideos, setUserVideos] = useState([]);

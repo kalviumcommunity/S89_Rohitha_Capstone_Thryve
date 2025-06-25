@@ -58,7 +58,7 @@ function FitnessPage() {
           <div className="fitness-card fitness-anxiety" onClick={() => window.open("https://youtu.be/mKW4ZFP8bGY", "_self")}><span>Controll your anxiety</span></div>
           <div className="fitness-card fitness-music" onClick={() => window.open("https://youtu.be/cF-w7jzVWcM", "_self")}><span>10min music for meditation</span></div>
           <div className="fitness-card fitness-surya" onClick={() => window.open("https://youtu.be/aJb1AWMc-64", "_self")}><span>SuryaNamaskaram at home</span></div>
-          <div className="fitness-card fitness-about" onClick={() => window.open("https://youtu.be/Pzaai8azbqA", "_self")}><span>About Yoga and roots</span></div>
+          <div className="fitness-card fitness-aboutyoga" onClick={() => window.open("https://youtu.be/Pzaai8azbqA", "_self")}><span>About Yoga and roots</span></div>
         </div>
       </div>
 

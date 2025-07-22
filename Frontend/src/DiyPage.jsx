@@ -15,7 +15,6 @@ function DiyPage() {
           <li className="diy-active">DIY</li>
           <li><Link to="/ai">AI</Link></li>
           <li><Link to="/study">Study</Link></li>
-          
         </ul>
         <div className="diy-search-bar">
           <input type="text" placeholder="Search" />
@@ -31,40 +30,37 @@ function DiyPage() {
       <div className="diy-section">
         <h3>Do it yourself</h3>
         <div className="diy-card-container">
-          
           <div className="diy-card diy-pottery" onClick={() => {
-            window.open("https://youtu.be/JzE3g9KrdOQ", "_self")
+            window.open("https://youtu.be/JzE3g9KrdOQ", "_blank")
           }}><span>Pottery all<br />by yourself</span></div>
           
           <div className="diy-card diy-table" onClick={() => {
-            window.open("https://youtu.be/inpok4MKVLM", "_self")
+            window.open("https://youtu.be/inpok4MKVLM", "_blank")
           }}><span>Make a table<br />at home</span></div>
           
           <div className="diy-card diy-baskets" onClick={() => {
-            window.open("https://youtu.be/LtaW6dKSn-U", "_self")
+            window.open("https://youtu.be/LtaW6dKSn-U", "_blank")
           }}><span>Knit baskets on<br />your own</span></div>
           
           <div className="diy-card diy-sweater" onClick={() => {
-            window.open("https://youtu.be/EhtD0tcqc6E", "_self")
+            window.open("https://youtu.be/EhtD0tcqc6E", "_blank")
           }}><span>Knit sweater on<br />your own</span></div>
           
           <div className="diy-card diy-canvas" onClick={() => {
-            window.open("https://youtu.be/-SQuTiu8wWU", "_self")
+            window.open("https://youtu.be/-SQuTiu8wWU", "_blank")
           }}><span>Painting a canvas on<br />your own</span></div>
 
           <div className="diy-card diy-candles" onClick={() => {
-            window.open("https://youtu.be/GAh9lQmaEvI", "_self")
+            window.open("https://youtu.be/GAh9lQmaEvI", "_blank")
           }}><span>Scented Candles<br />by yourself</span></div>
           
           <div className="diy-card diy-lipbalm" onClick={() => {
-            window.open("https://youtu.be/XhOmHo_7KzM", "_self")
+            window.open("https://youtu.be/XhOmHo_7KzM", "_blank")
           }}><span>Make your<br />own lipbalm</span></div>
           
           <div className="diy-card diy-laterns" onClick={() => {
-            window.open("https://youtu.be/yT9B1mjKzhc", "_self")
+            window.open("https://youtu.be/yT9B1mjKzhc", "_blank")
           }}><span>Mason Jar Lanterns<br />at home</span></div>
-
-
         </div>
       </div>
 
@@ -81,10 +77,7 @@ function DiyPage() {
         <div className="diy-contact">
           <strong>Contact:</strong> +91 9494568800, +91 8500016359
           <div className="diy-social-icons">
-            <span>📸</span>
-            <span>🐦</span>
-            <span>📘</span>
-            <span>▶️</span>
+           
           </div>
         </div>
       </footer>

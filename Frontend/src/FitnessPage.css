@@ -1,11 +1,27 @@
 .fitness-page {
-  background-image: url('https://images.unsplash.com/photo-1534367610401-ec7d9e3249d7');
+  background-image: url('https://i.pinimg.com/1200x/4e/a9/db/4ea9dbeb502defa91ff3a1bf6ab5299d.jpg');
   background-size: cover;
   background-position: center;
   color: black;
   font-family: 'Segoe UI', sans-serif;
   min-height: 100vh;
 }
+
+.fitness-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0); /* White overlay, adjust alpha for more/less opacity */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Make sure all direct children are above the overlay */
+.fitness-page > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* Navbar styling like RecipePage */
 .fitness-navbar {
   background-color: white;
@@ -99,25 +115,40 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   color: white;
   display: flex;
-  align-items: flex-end;
+  align-items: center;      /* Vertically center */
+  justify-content: center;  /* Horizontally center */
   font-weight: bold;
   font-size: 15px;
-  padding: 32px 28px 20px 28px;
   flex: 0 0 auto;
+  overflow: hidden;
+  padding: 0;
 }
 
-.fitness-card span {
+/* Dark overlay */
+.fitness-card::before {
+  content: "";
   position: absolute;
-  bottom: 18px;
-  left: 24px;
+  inset: 0;
+  background: rgba(0,0,0,0.32); /* Adjust opacity as needed */
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+/* Centered text */
+.fitness-card span {
+  position: relative;
+  z-index: 2;
   color: white;
   font-weight: bold;
   text-shadow: 1px 1px 2px black;
   font-size: 1.15em;
+  text-align: center;
+  padding: 0 10px;
 }
 
 /* Specific card backgrounds */
@@ -190,19 +221,39 @@
 .fitness-footer {
   display: flex;
   justify-content: space-between;
-  background: white;
-  padding: 30px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  padding: 17px 50px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.fitness-footer .fitness-about {
-  max-width: 400px;
-  font-size: 14px;
+.fitness-about,
+.fitness-contact {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  line-height: 1.6;
+  padding: 0;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 30%;
+  min-width: 260px;
+  box-sizing: border-box;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
 }
 
-.fitness-footer .fitness-contact {
-  font-size: 14px;
+.fitness-about h4,
+.fitness-contact h4 {
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .fitness-social-icons {
@@ -210,4 +261,18 @@
   gap: 15px;
   font-size: 20px;
   margin-top: 10px;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .fitness-footer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 10px;
+  }
+  .fitness-about,
+  .fitness-contact {
+    max-width: 100%;
+    margin-bottom: 18px;
+  }
 }

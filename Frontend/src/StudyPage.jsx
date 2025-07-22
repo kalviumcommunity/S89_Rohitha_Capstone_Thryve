@@ -25,7 +25,7 @@ function StudyPage() {
 
       {/* Main content */}
       <div className="content">
-        <h2 className="main-heading">Score Perfect scores on your exams</h2>
+        <h2 className="main-heading">Score Perfect scores <br/> on your exams</h2>
 
         <h3 className="section-heading">Summaries of topics</h3>
         <div className="card-container">

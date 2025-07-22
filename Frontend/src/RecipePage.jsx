@@ -2,6 +2,7 @@ import React from 'react';
 import './RecipePage.css';
 import { Link } from 'react-router-dom';
 
+
 function RecipePage() {
   return (
     <div className="recipe-container">
@@ -107,7 +108,9 @@ function RecipePage() {
 
       {/* Footer */}
       <footer className="recipe-footer">
+        <div className="recipe-footer-container">
         <div className="recipe-about">
+          
           <h4>About our website</h4>
           <p>
             Welcome to Thryve, the ultimate online hub designed by a student, for students.
@@ -117,11 +120,6 @@ function RecipePage() {
         </div>
         <div className="recipe-contact">
           <strong>Contact:</strong> +91 9494568800, +91 8500016359
-          <div className="recipe-social-icons">
-            <span>📸</span>
-            <span>🐦</span>
-            <span>📘</span>
-            <span>▶</span>
           </div>
         </div>
       </footer>

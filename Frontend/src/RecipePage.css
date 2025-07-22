@@ -15,8 +15,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: url('https://i.pinimg.com/736x/83/af/4d/83af4db9c1fe51bc5b593488b65f4d01.jpg') center/cover no-repeat;
-  opacity: 0.45; /* Adjust opacity as needed */
+  background: url('https://i.pinimg.com/736x/1b/f2/81/1bf2814dfae7f7896e35b696b4b35dd7.jpg') center/cover no-repeat;
+  opacity: 0.55; /* Adjust opacity as needed */
   z-index: 0;
   pointer-events: none;
 }
@@ -112,7 +112,7 @@
 
 .recipe-card {
   width: 280px;
-  height: 170px;    /* Reduced height */
+  height: 170px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -120,21 +120,31 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   color: white;
   display: flex;
-  align-items: flex-end;
+  align-items: center;        /* Vertically center */
+  justify-content: flex-start;/* Left align */
   font-weight: bold;
   font-size: 15px;
-  padding: 32px 28px 20px 28px; /* Adjusted padding for new height */
+  padding-left: 18px;         /* Add left padding */
   flex: 0 0 auto;
+  overflow: hidden;
 }
 
-.recipe-card span {
+.recipe-card::before {
+  content: "";
   position: absolute;
-  bottom: 18px;
-  left: 24px;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Same as MainPage */
+  z-index: 0;
+}
+.recipe-card span {
+  position: relative;
   color: white;
   font-weight: bold;
   text-shadow: 1px 1px 2px black;
   font-size: 1.15em;
+  text-align: left;
+  z-index: 1;
+  padding: 0 10px 0;
 }
 
 /* Card-specific background images */
@@ -194,21 +204,45 @@
 }
 
 .recipe-footer {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 32px 60px;
+  margin-top: 0;
+  width: 100%;
+}
+
+.recipe-footer-container {
   display: flex;
   justify-content: space-between;
-  background: white;
-  padding: 30px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  max-width: 2000px;
+  margin: auto;
+  width: 100%;
 }
 
-.recipe-about {
-  max-width: 400px;
-  font-size: 14px;
-}
-
+.recipe-about,
 .recipe-contact {
-  font-size: 14px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  line-height: 1.6;
+  padding: 0;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 30%;
+  min-width: 260px;
+  box-sizing: border-box;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
+}
+
+.recipe-about h4,
+.recipe-contact h4 {
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .recipe-social-icons {
@@ -218,4 +252,16 @@
   margin-top: 10px;
 }
 
-
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .recipe-footer-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 10px;
+  }
+  .recipe-about,
+  .recipe-contact {
+    max-width: 100%;
+    margin-bottom: 18px;
+  }
+}

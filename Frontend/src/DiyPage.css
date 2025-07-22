@@ -1,5 +1,5 @@
 .diy-page {
-  background-image: url('https://images.unsplash.com/photo-1602524818561-4272c8e6c1b5');
+  background-image: url('https://i.pinimg.com/736x/f5/d8/e1/f5d8e147a296ee7bb2a2420f100baa75.jpg');
   background-size: cover;
   background-position: center;
   color: black;
@@ -7,6 +7,21 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.diy-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.4); /* White overlay, adjust alpha for more/less opacity */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Make sure all direct children are above the overlay */
+.diy-page > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Navbar (like FitnessPage) */
@@ -84,13 +99,13 @@
 .diy-card-container {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 28px; /* Match Fitness page */
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 10px;
+  padding-bottom: 16px;
   scroll-behavior: smooth;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   min-width: 0;
   width: 100%;
   flex-wrap: nowrap;
@@ -105,21 +120,40 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  flex: 0 0 auto; /* Prevents cards from shrinking/growing */
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 15px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  padding: 0;
 }
 
-/* ...rest of your code... */
-
-.diy-card span {
+/* Dark overlay */
+.diy-card::before {
+  content: "";
   position: absolute;
-  bottom: 10px;
-  left: 15px;
+  inset: 0;
+  background: rgba(0,0,0,0.32);
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+/* Centered text */
+.diy-card span {
+  position: relative;
+  z-index: 2;
   color: white;
   font-weight: bold;
-  font-size: 16px;
   text-shadow: 1px 1px 2px black;
+  font-size: 1.15em;
+  text-align: center;
+  padding: 0 10px;
 }
 
 /* Specific card backgrounds */
@@ -160,19 +194,39 @@
 .diy-footer {
   display: flex;
   justify-content: space-between;
-  background: white;
-  padding: 30px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  padding: 17px 50px;
   flex-wrap: wrap;
-  margin-top: auto; /* Pushes footer to the bottom */
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.diy-about {
-  max-width: 400px;
-  font-size: 14px;
-}
-
+.diy-about,
 .diy-contact {
-  font-size: 14px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  line-height: 1.6;
+  padding: 0;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 30%;
+  min-width: 260px;
+  box-sizing: border-box;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
+}
+
+.diy-about h4,
+.diy-contact h4 {
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .diy-social-icons {
@@ -181,3 +235,19 @@
   font-size: 20px;
   margin-top: 10px;
 }
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .diy-footer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 10px;
+  }
+  .diy-about,
+  .diy-contact {
+    max-width: 100%;
+    margin-bottom: 18px;
+  }
+}
+
+

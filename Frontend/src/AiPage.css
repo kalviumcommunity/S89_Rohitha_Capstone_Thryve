@@ -1,12 +1,28 @@
 .ai-page {
-  background-image: url('https://images.unsplash.com/photo-1622482188144-d6dd7ed782b1'); /* Replace with your AI background */
+  background-image: url('https://i.pinimg.com/1200x/6f/f0/eb/6ff0eb0d7b643ba5ee7100277f3c0bf0.jpg');
   background-size: cover;
   background-position: center;
   font-family: 'Segoe UI', sans-serif;
   min-height: 100vh;
   color: black;
+  position: relative;   /* Add this */
+  z-index: 0;           /* Add this */
 }
 
+.ai-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.3); /* Adjust alpha for more/less opacity */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Make sure all direct children are above the overlay */
+.ai-page > * {
+  position: relative;
+  z-index: 1;
+}
 /* Navbar */
 .navbar {
   background-color: white;
@@ -65,6 +81,14 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  min-height: 500px;
+
+  background-image: url('https://i.pinimg.com/736x/47/77/70/477770cab0749e4ceedd565db9da0631.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Optional: keep the white overlay for readability */
+  background-blend-mode: lighten;
 }
 
 .message {

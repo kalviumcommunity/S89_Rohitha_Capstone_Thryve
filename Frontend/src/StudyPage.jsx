@@ -80,12 +80,7 @@ function StudyPage() {
         </div>
         <div className="contact">
           <strong>Contact:</strong> +91 9494568800, +91 8500016359
-          <div className="social-icons">
-            <span>📸</span>
-            <span>🐦</span>
-            <span>📘</span>
-            <span>▶️</span>
-          </div>
+          
         </div>
       </footer>
     </div>

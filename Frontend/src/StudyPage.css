@@ -1,5 +1,5 @@
 .study-page {
-  background-image: url('https://i.pinimg.com/736x/4f/ef/68/4fef68227fd9a48eb453d3d0cd27a3fc.jpg');
+  background-image: url('https://i.pinimg.com/736x/32/9f/97/329f97063e9868885b3e443d1ecd414d.jpg');
   background-size: cover;
   background-position: center;
   color: black;
@@ -7,6 +7,24 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative; /* Add this */
+  z-index: 0;         /* Add this */
+}
+
+/* Opacity overlay */
+.study-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.4); /* Adjust alpha for more/less opacity */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Make sure all direct children are above the overlay */
+.study-page > * {
+  position: relative;
+  z-index: 1;
 }
 
 .navbar {
@@ -63,25 +81,26 @@
   font-weight: 700;
   margin-bottom: 20px;
   color: black;
+  margin-top: 10px; /* Add this line, adjust value as needed */
 }
 
 .section-heading {
   font-size: 18px;
-  font-weight: 600;
-  margin: 20px 0 10px;
+  font-weight: 650;
+  margin: 40px 0 20px;
   color: black;
 }
 
 .card-container {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 28px; /* Match Fitness/Recipe/Diy */
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 10px;
+  padding-bottom: 16px;
   scroll-behavior: smooth;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   min-width: 0;
   width: 100%;
   flex-wrap: nowrap;
@@ -91,22 +110,45 @@
 }
 
 .card {
-  width: 260px;
-  height: 160px;
+  width: 280px;
+  height: 170px;
   background-size: cover;
   background-position: center;
   position: relative;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  color: white;
+  display: flex;
+  align-items: center;      /* Vertically center */
+  justify-content: center;  /* Horizontally center */
+  font-weight: bold;
+  font-size: 15px;
   flex: 0 0 auto;
+  overflow: hidden;
+  padding: 0;
 }
-.card span {
+
+/* Dark overlay for cards */
+.card::before {
+  content: "";
   position: absolute;
-  bottom: 10px;
-  left: 15px;
+  inset: 0;
+  background: rgba(0,0,0,0.32);
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+/* Centered text */
+.card span {
+  position: relative;
+  z-index: 2;
   color: white;
   font-weight: bold;
   text-shadow: 1px 1px 2px black;
+  font-size: 1.15em;
+  text-align: center;
+  padding: 0 10px;
 }
 
 /* Backgrounds for specific cards */
@@ -150,24 +192,53 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  background: white;
-  padding: 30px;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  padding: 16px 60px;
   flex-wrap: wrap;
-  margin-top: auto; /* Pushes footer to the bottom */
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.footer .about {
-  max-width: 400px;
-  font-size: 14px;
+.about,
+.contact {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  line-height: 1.6;
+  padding: 0;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 30%;
+  min-width: 260px;
+  box-sizing: border-box;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
 }
 
-.footer .contact {
-  font-size: 14px;
+.about h4,
+.contact h4 {
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
-.social-icons {
-  display: flex;
-  gap: 15px;
-  font-size: 20px;
-  margin-top: 10px;
+
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 10px;
+  }
+  .about,
+  .contact {
+    max-width: 100%;
+    margin-bottom: 18px;
+  }
 }

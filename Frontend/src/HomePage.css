@@ -7,12 +7,14 @@ body {
 }
 
 .home-container {
-  background-image: url('https://i.pinimg.com/736x/c2/95/79/c2957968cd8f25c50a086209eb4a3671.jpg');
+  background-image: url('');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header */
@@ -49,13 +51,14 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
+  
 }
 
 .top-row, .bottom-row {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 50px;
 }
 
 /* Card shared styles */
@@ -70,11 +73,14 @@ body {
 }
 
 .top-row .card {
-  width: 300px;
+  height: 250px;
+  width: 250px;
+  
 }
 
 .bottom-row .card {
-  width: 300px;
+  height: 250px;
+  width: 250px;
 }
 
 /* Individual card background images */
@@ -130,49 +136,63 @@ body {
 }
 
 /* Footer */
-footer {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: black;
-  padding: 32px 60px;
-  margin-top: 32px;
-}
-
-.footer-container {
+.footer {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  padding: 17px 50px;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.footer-left,
-.footer-right {
+  margin-top: auto;
   width: 100%;
-  max-width: 50%;
+  box-sizing: border-box;
 }
 
-.footer-left h3,
-.footer-right h3 {
+.about,
+.contact {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  line-height: 1.6;
+  padding: 0;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 30%;
+  min-width: 260px;
+  box-sizing: border-box;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
+}
+
+.about h4,
+.contact h4 {
   font-weight: bold;
   margin-bottom: 8px;
 }
 
-.footer-icons {
+.social-icons {
   display: flex;
-  gap: 16px;
-  margin-top: 8px;
+  gap: 15px;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
-.footer-icons i {
-  width: 20px;
-  height: 20px;
-  color: black;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.footer-icons i:hover {
-  transform: scale(1.1);
-  color: #0077b6;
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px 10px;
+  }
+  .about,
+  .contact {
+    max-width: 100%;
+    margin-bottom: 18px;
+  }
 }
 
 .nav-button {

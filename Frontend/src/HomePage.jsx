@@ -35,9 +35,9 @@ function HomePage() {
       </div>
 
       {/* Footer */}
-      <footer>
-        <div className="footer-container">
-          <div className="footer-left">
+      <footer className="footer">
+
+          <div className="about">
             <h3>About our website</h3>
             <p>
               Welcome to Thryve, the ultimate online hub designed by a student,
@@ -46,17 +46,17 @@ function HomePage() {
               covered.
             </p>
           </div>
-          <div className="footer-right">
+          <div className="contact">
             <h3>Contact:</h3>
             <p>+91 9494568800, +91 8500016359</p>
-            <div className="footer-icons">
+            <div className="social-icons">
               <i data-feather="instagram"></i>
               <i data-feather="twitter"></i>
               <i data-feather="facebook"></i>
               <i data-feather="youtube"></i>
             </div>
           </div>
-        </div>
+      
       </footer>
     </div>
   );

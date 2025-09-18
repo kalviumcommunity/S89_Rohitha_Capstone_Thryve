@@ -36,8 +36,9 @@
 }
 
 .recipe-logo {
-  font-size: 24px;
-  font-weight: bold;
+  font-family: 'Georgia', serif !important;
+  font-size: 30px !important;
+  font-weight: bold !important;
 }
 
 .recipe-nav-links {

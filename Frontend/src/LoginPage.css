@@ -37,7 +37,7 @@ body {
 }
 
 .logo {
-  font-size: 40px;
+  font-size: 35px !important;
   font-weight: bold;
   font-family: "Georgia", serif;
 
@@ -52,22 +52,28 @@ body {
 
 .sign-up-container {
   display: flex;
-  gap: 10px;
+  gap: 25px;
   align-items: center;
   
 }
 
 .sign-up-link {
   text-decoration: none;
+  padding: 8px 16px;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
   font-weight: 600;
-  font-size: 20px;
-  font-family: "Segoe UI", sans-serif;
-  color: black;
-  transition: color 0.3s;
+  transition: background-color 0.3s ease;
+  font-size: 15px;
+  font-family: 'Segoe UI', sans-serif;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .sign-up-link:hover {
-  color: #0056b3;
+  background-color: #333;
 }
 
 .user-icon {

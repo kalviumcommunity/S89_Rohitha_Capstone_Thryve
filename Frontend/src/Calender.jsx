@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Calender.css';
 
 function Calender({ show, onClose }) {
-  const [selectedDate, setSelectedDate] = useState(() => {
-    return localStorage.getItem('userCalendarDate') || '';
-  });
+  const [selectedDate, setSelectedDate] = useState('');
   const [calendarEvents, setCalendarEvents] = useState(() => {
     const saved = localStorage.getItem('userCalendarEvents');
     return saved ? JSON.parse(saved) : {};
   });
   const [eventInput, setEventInput] = useState('');
 
+  // Reset to today's date when modal opens
+  useEffect(() => {
+    if (show) {
+      const today = new Date().toISOString().slice(0, 10);
+      setSelectedDate(today);
+    }
+  }, [show]);
+
   const handleDateChange = (e) => {
     setSelectedDate(e.target.value);
-    localStorage.setItem('userCalendarDate', e.target.value);
   };
 
   const handleEventInput = (e) => setEventInput(e.target.value);

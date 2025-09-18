@@ -131,7 +131,6 @@
 .profile-btn-follow {
   background: linear-gradient(90deg, #ffb347 60%, #ffcc80 100%);
   color: #fff;
-  margin-top: 18px;
   margin-bottom: 0;
 }
 
@@ -162,4 +161,13 @@
   color: #fff;
   margin-bottom: 0;
   
+}
+
+.profile-btn-row-bottom .profile-btn {
+  height: 44px;           /* Set a fixed height for both buttons */
+  padding: 0 22px;        /* Keep horizontal padding */
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -28,17 +28,20 @@
   z-index: 10;
 }
 
-.main-page .logo {
-  font-size: 24px;
+.main-page .navbar .logo {
+  font-size: 30px !important;
   font-weight: bold;
+  color: #020202 !important;
+  margin-left: -10px;
 }
 
 .main-page nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 23px;
   padding: 0;
   margin: 0;
+  
 }
 
 .main-page nav li {
@@ -217,7 +220,7 @@ footer {
 /* Style each navigation link */
 .navbar ul li a {
   text-decoration: none;
-  color: #333333;
+  color: #080808;
   font-weight: bold;
   font-size: 16px;
   transition: color 0.3s ease;

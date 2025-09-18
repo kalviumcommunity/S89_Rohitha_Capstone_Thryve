@@ -47,22 +47,22 @@ function Notes({ show, onClose }) {
           <button className="notes-close" onClick={onClose}>×</button>
         </div>
         <div className="notes-tabs">
-          {notesList.map(note => (
-            <div
-              key={note.id}
-              className={`notes-tab${note.id === activeNoteId ? " active" : ""}`}
-              onClick={() => handleSwitchNote(note.id)}
-            >
-              {note.title}
-              {notesList.length > 1 && (
-                <span
-                  className="notes-delete"
-                  onClick={e => { e.stopPropagation(); handleDeleteNote(note.id); }}
-                  title="Delete note"
-                >×</span>
-              )}
-            </div>
-          ))}
+          {notesList.map((note, idx) => (
+  <div
+    key={note.id}
+    className={`notes-tab${note.id === activeNoteId ? " active" : ""}`}
+    onClick={() => handleSwitchNote(note.id)}
+  >
+    {`Note ${idx + 1}`}
+    {notesList.length > 1 && (
+      <span
+        className="notes-delete"
+        onClick={e => { e.stopPropagation(); handleDeleteNote(note.id); }}
+        title="Delete note"
+      >×</span>
+    )}
+  </div>
+))}
           <button className="notes-add" onClick={handleAddNote} title="Add note">+</button>
         </div>
         <textarea

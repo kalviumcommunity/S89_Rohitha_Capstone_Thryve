@@ -252,4 +252,16 @@
   }
 }
 
+.diy-card{
+  /* ...existing styles... */
+  transition: transform 0.25s cubic-bezier(.21,1.02,.73,1.01), box-shadow 0.25s;
+}
+
+.diy-card:hover{
+  transform: scale(1.08);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+  z-index: 2;
+}
+
+
 
